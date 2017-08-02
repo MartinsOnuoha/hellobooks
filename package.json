@@ -4,7 +4,7 @@
   "description": "Library management",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node mocha server/test/test.js",
+    "test": "babel-node",
     "lint": "eslint ./server/*.js --fix",
     "start": "nodemon ./server/index.js --exec babel-node --presets es2015,stage-2"
   },
