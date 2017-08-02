@@ -27,9 +27,9 @@
 
 <body>
 
-    <div id="wrapper">
+    <div id="wrapper"> <!-- Wrapper -->
 
-        <!-- Navigation -->
+        <!-- Navigations -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
            
             <div class="navbar-header">
@@ -43,7 +43,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Martins Onuoha<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                          <li>
                             <a href="#"><i class="fa fa-fw fa-envelope"></i>Notifications</a>
@@ -57,13 +57,14 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
+            </ul> <!-- / top menu items -->
+
     <!-- SIDE BAR MENU  -->
             
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active"> 
-                        <a href="#"><i class="fa fa-fw fa-book"></i>Library</a>
+                        <a href="dashboard.html"><i class="fa fa-fw fa-book"></i>Library</a>
                     </li>
                     <li>
                         <a href="addbooks.html"><i class="fa fa-fw fa-plus"></i>Add Books</a>
@@ -92,6 +93,7 @@
             <!-- /end .navbar-collapse -->
         </nav>
 
+        <!-- content -->
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -102,21 +104,21 @@
                         <h1 class="page-header">
                             Library <small>Select your preferred reads.</small>
                         </h1>
-                        <form>
-                          
+                       
+                     <!-- Search box -->               
                         <ol class="breadcrumb">
                             <li class="active">
                                 <form>
                                     <input type="text" name="search" placeholder="Search...">
                                 </form> 
                             </li>
-                        </ol>
+                        </ol> <!-- / searchBox -->
                     </div>
                 </div>
 
                 <!-- end /.row -->
 
-                <!-- BOOKS arranged in rows-->
+                <!-- Books arranged in rows-->
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                        
@@ -418,7 +420,7 @@
                         </div>
                     </div>
                 </div>
-
+<!-- /.row>
 
             </div>
             <!-- /.container-fluid -->
