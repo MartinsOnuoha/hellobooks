@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 // User signup
 router.post("/users/signup", UserController.signup);
 router.post("/users/signin", Auth.signin);
-router.get("/users/", UserController.)
+router.get("/users/", UserController.getAllUsers);
 
 // Books Routes
 
@@ -26,31 +26,31 @@ router.route("/books").
     post(BookController.addBook);
 
 
-router.route("/users/:userId/books").
-    post(UserController.Books).
-    get((req, res) => {
+// router.route("/users/:userId/books").
+//     post(UserController.Books).
+//     get((req, res) => {
 
-        if (req.query.returned === "false") {
+//         if (req.query.returned === "false") {
 
-            return res.send([
-                "book1",
-                "book2"
-            ]);
+//             return res.send([
+//                 "book1",
+//                 "book2"
+//             ]);
 
-        }
+//         }
 
-        res.send([
-            "book1",
-            "book2",
-            "book3"
-        ]);
+//         res.send([
+//             "book1",
+//             "book2",
+//             "book3"
+//         ]);
 
-    }).
-    put((req, res) => {
+//     }).
+//     put((req, res) => {
 
-        res.send("Book Returned!");
+//         res.send("Book Returned!");
 
-    });
+//     });
 
 // Admin modify books
 router.put("/books/:bookId", (req, res) => {

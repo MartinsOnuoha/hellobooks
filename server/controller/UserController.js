@@ -17,7 +17,17 @@ class User {
    */
     static getAllUsers (req, res) {
 
-        userModel.findAndCountAll()
+        userModel.findAndCountAll().
+            then((response) => {
+
+                res.status(200).json(response);
+
+            }).
+            catch((err) => {
+
+                res.send(err);
+
+            });
 
     }
     static signup (req, res) {
