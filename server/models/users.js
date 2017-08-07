@@ -1,20 +1,46 @@
+import bcrypt from 'bcrypt';
 
-module.exports = (sequelize, DataTypes) => {
+const user = (sequelize, DataTypes) => {
+  const usersModel = sequelize.define('users', {
 
-    const users = sequelize.define("users", {
-        '"email"': DataTypes.STRING,
-        "membership": DataTypes.STRING,
-        "password": DataTypes.STRING,
-        "username": DataTypes.STRING
-    }, {
-        "freezeTableName": true,
-        "classMethods": {
-            associate (models) {
-            // Associations can be defined here
-            }
-        }
-    });
-
-    return users;
-
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    membership: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'Bronze'
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    image: DataTypes.STRING
+  }, {
+    classMethods: {
+      associate() {
+        // Associations
+      }
+    },
+    hooks: {
+      beforeCreate: (users) => {
+        const hashP = bcrypt.hashSync(users.password, 10);
+        users.password = hashP;
+        return users;
+      },
+    }
+  });
+  return usersModel;
 };
+
+export default user;

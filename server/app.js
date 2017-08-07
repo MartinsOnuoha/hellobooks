@@ -1,11 +1,11 @@
-import bodyParser from "body-parser";
+require("dotenv").config();
 import express from "express";
+import bodyParser from "body-parser";
 import morgan from "morgan";
+
 import router from "./routes/routes";
 
-require("dotenv").config();
-
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 2000;
 const app = express();
 
 app.use(morgan("dev"));
@@ -17,7 +17,11 @@ app.use("/api", router);
 
 app.listen(port, (err) => {
 
-    if (err) console.log(err);
+    if (err) {
+
+        console.log(err);
+
+    }
     console.log("Server running on port " + port);
 
 });

@@ -1,54 +1,33 @@
+import Auth from "../middleware/authUser";
+import BookController from "../controller/booksController";
 import UserController from "../controller/UserController";
 import express from "express";
 
 
-const Router = express.Router();
+const router = express.Router();
 
 
 // Home route
-Router.get("/", (req, res) => {
+router.get("/", (req, res) => {
 
-    res.send("Welcome to Hello Books");
-
-});
-
-// Library
-Router.get("/user", (req, res) => {
-
-    res.status(200).send("You are in the library.");
+    res.status(200).send("Welcome to Hello Books");
 
 });
+
 // User signup
-Router.post('/user/signup', UserController.signup);
-Router.post("/users/signin", (req, res) => {
+router.post("/users/signup", UserController.signup);
+router.post("/users/signin", Auth.signin);
+router.get("/users/", UserController.)
+
+// Books Routes
+
+router.route("/books").
+    get(BookController.addBook).
+    post(BookController.addBook);
 
 
-    res.send(req.body);
-
-});
-
-
-// Books
-
-
-Router.route("/books").
-    get((req, res) => {
-        // Books in library
-        res.send("All Books in Library"); 
-
-    }).
-    post((req, res) => {
-        // Add new book
-        res.send("New book added"); 
-
-    });
-
-Router.route("/users/:userId/books").
-    post((req, res) => {
-        // Borrow book
-        res.send("new book borrowed"); 
-
-    }).
+router.route("/users/:userId/books").
+    post(UserController.Books).
     get((req, res) => {
 
         if (req.query.returned === "false") {
@@ -59,6 +38,7 @@ Router.route("/users/:userId/books").
             ]);
 
         }
+
         res.send([
             "book1",
             "book2",
@@ -67,17 +47,29 @@ Router.route("/users/:userId/books").
 
     }).
     put((req, res) => {
-        // Return book
-        res.send("book returned");
+
+        res.send("Book Returned!");
 
     });
 
-// Modify books
-Router.put("/books/:bookId", (req, res) => {
+// Admin modify books
+router.put("/books/:bookId", (req, res) => {
 
     res.send(req.body);
 
 });
 
+// 404 routes
+router.route("*").
+    post((req, res) => {
 
-export default Router;
+        res.send("Sorry, Page not Found.");
+
+    }).
+    get((req, res) => {
+
+        res.send("Sorry, Page not Found.");
+
+    });
+
+export default router;

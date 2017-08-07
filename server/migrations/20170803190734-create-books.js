@@ -14,11 +14,17 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
-      writer: {
+      author: {
         type: Sequelize.STRING
       },
       date: {
         type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.STRING
+      },
+      quantity: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

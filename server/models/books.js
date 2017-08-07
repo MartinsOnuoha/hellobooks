@@ -17,13 +17,14 @@ const book = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     year: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-
-
     image: {
       type: DataTypes.STRING,
       allowNull: true

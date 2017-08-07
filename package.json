@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Library management",
   "main": "index.js",
+  
   "scripts": {
     "start:dev": "./node_modules/.bin/nodemon ./server/bin/www.js",
     "test": "babel-node NODE_ENV=test mocha",
@@ -15,6 +16,7 @@
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.2",
     "morgan": "^1.8.2",
     "pg": "^7.0.2",
     "pg-hstore": "^2.3.2",

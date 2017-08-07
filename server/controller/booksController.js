@@ -19,7 +19,7 @@ class Book {
 
         bookModel.create(req.body).then(() => {
 
-            res.send(200).json({"message": "new book added"});
+            res.send(200).json({"message": "new book created!"});
 
         }).
             catch((error) => {
@@ -27,12 +27,14 @@ class Book {
             // Check if all fields are supplied.
                 if (error.name === "SequelizeValidationError") {
 
-                    res.status(400).json({"message": "One or more fields are empty"});
+                    res.status(400).
+                        json({"message": "One or more fields are empty"});
                 // Check if a duplicate request was made.
 
                 } else if (error.name === "SequelizeUniqueConstraintError") {
 
-                    res.status(400).json({"message": "Two books cannot have the same ISBN number"});
+                    res.status(400).
+                        json({"message": "Two books cannot have the same ISBN number"});
 
                 } else {
 
@@ -41,6 +43,15 @@ class Book {
                 }
 
             });
+
+    }
+
+    static getBook (req, res) {
+
+        bookModel.findAll().then((response) => {
+            res.send(response);
+
+        });
 
     }
 
