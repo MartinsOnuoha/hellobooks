@@ -19,7 +19,8 @@ class Authentication {
         userModel.findOne({"where": {"email": req.body.email}}).
             then((user) => {
 
-                if (user && bcrypt.compare(req.body.password, user.dataValues.password)) {
+                if (user && bcrypt.compare(req.
+                    body.password, user.dataValues.password)) {
 
                     const token = jwt.sign({
                         "id": user.dataValues.id,
@@ -36,16 +37,16 @@ class Authentication {
 
                     res.status(200).send(response);
 
-} else {
+                } else {
 
                     res.status(404).send({"message": "User does not exist"});
 
-}
+                }
 
-}).
+            }).
             catch((err) => res.send(err));
-    
-}
+
+    }
 
 }
 

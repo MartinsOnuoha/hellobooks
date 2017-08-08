@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = {
   up(queryInterface, Sequelize) {
     return queryInterface.createTable('books', {
@@ -8,23 +8,25 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      isbn: {
-        type: Sequelize.STRING
-      },
+      // isbn: {
+      //   type: Sequelize.STRING
+      // },
       title: {
         type: Sequelize.STRING
       },
       author: {
         type: Sequelize.STRING
-      },
-      date: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.STRING
-      },
+       },
+      // date: {
+      //   type: Sequelize.STRING,
+      //   allowNull: true
+      // },
+      // description: {
+      //   type: Sequelize.STRING
+      // },
       quantity: {
         type: Sequelize.INTEGER
+        allowNull: true
       },
       createdAt: {
         allowNull: false,
