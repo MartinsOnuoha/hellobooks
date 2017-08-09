@@ -184,7 +184,7 @@ rules:
   prefer-spread: error
   prefer-template: error
   quote-props: error
-  quotes: error
+  quotes: 0
   radix: error
   require-await: error
   require-jsdoc: error
