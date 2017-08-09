@@ -1,11 +1,14 @@
+import Sequelize from "sequelize";
 import model from "../models";
+
 
 const userModel = model.users;
 const borrowedBooksModel = model.books;
 
 /**
  *@class User
- *@classdesc creates a new user
+ *@classdesc Creates a new User in the Database
+ *@classdesc assigns user methods
  */
 class User {
 
@@ -17,9 +20,19 @@ class User {
    */
     static getAllUsers (req, res) {
 
-        userModel.findAndCountAll()
+        userModel.findAndCountAll().
+            then((response) => {
+                res.status(200).json(response);
+
+            }).
+            catch((err) => {
+
+                res.send(err);
+
+            });
 
     }
+
     static signup (req, res) {
 
         userModel.create(req.body).then(() => {
@@ -30,13 +43,21 @@ class User {
         }).
             catch((error) => {
 
-                if (error.name === "SequelizeValidationError") {
+                if (error.name === "SequelizeUniqueConstraintError") {
 
-                    res.status(400).json({"message": error.message});
+                    res.status(400).json({
+
+                        "message": "Sorry, this email address is registered"});
+
+                } else if (error === Sequelize.ValidationError) {
+
+                    res.status(400).json(
+                        {"message": "An Error Occurred, Check Signup details"});
 
                 } else {
 
-                    res.json(error);
+                    res.status(400).json(
+                        {"message": "Oops! an Error Occurred."});
 
                 }
 

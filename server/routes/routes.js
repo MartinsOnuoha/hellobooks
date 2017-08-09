@@ -14,10 +14,21 @@ router.get("/", (req, res) => {
 
 });
 
-// User signup
+/**
+ * Create a new User on Api call
+ */
 router.post("/users/signup", UserController.signup);
+
+/**
+ * Sign in Existing User
+ */
 router.post("/users/signin", Auth.signin);
-router.get("/users/", UserController.)
+
+/**
+ * Get all Registered Users
+ */
+router.get("/users/", UserController.getAllUsers);
+
 
 // Books Routes
 
@@ -27,7 +38,7 @@ router.route("/books").
 
 
 router.route("/users/:userId/books").
-    post(UserController.Books).
+    post().
     get((req, res) => {
 
         if (req.query.returned === "false") {
@@ -60,7 +71,7 @@ router.put("/books/:bookId", (req, res) => {
 });
 
 // 404 routes
-router.route("*").
+    router.route("*").
     post((req, res) => {
 
         res.send("Sorry, Page not Found.");
