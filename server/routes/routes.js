@@ -1,55 +1,86 @@
-import express from 'express';
+import Auth from "../middleware/authUser";
+import BookController from "../controller/booksController";
+import UserController from "../controller/UserController";
+import express from "express";
 
-const Router = express.Router();
+
+const router = express.Router();
 
 
-//Home route
-Router.get('/', (req,res) => {
-    res.send("Welcome to Hello Books");
-})
+// Home route
+router.get("/", (req, res) => {
 
-//Library
-Router.get('/user', (req, res) => {
-    res.status(200).send('You are in the library.');
+    res.status(200).send("Welcome to Hello Books");
+
 });
 
-// User signup
-Router.post('/users/signup', userController.signup);
+/**
+ * Create a new User on Api call
+ */
+router.post("/users/signup", UserController.signup);
 
-Router.post('/users/signin', (req, res) => {
-  res.send(req.body);
+/**
+ * Sign in Existing User
+ */
+router.post("/users/signin", Auth.signin);
+
+/**
+ * Get all Registered Users
+ */
+router.get("/users/", UserController.getAllUsers);
+
+
+// Books Routes
+
+router.route("/books").
+    get(BookController.addBook).
+    post(BookController.addBook);
+
+
+router.route("/users/:userId/books").
+    post().
+    get((req, res) => {
+
+        if (req.query.returned === "false") {
+
+            return res.send([
+                "book1",
+                "book2"
+            ]);
+
+        }
+
+        res.send([
+            "book1",
+            "book2",
+            "book3"
+        ]);
+
+    }).
+    put((req, res) => {
+
+        res.send("Book Returned!");
+
+    });
+
+// Admin modify books
+router.put("/books/:bookId", (req, res) => {
+
+    res.send(req.body);
+
 });
 
+// 404 routes
+    router.route("*").
+    post((req, res) => {
 
-//Books
+        res.send("Sorry, Page not Found.");
 
+    }).
+    get((req, res) => {
 
-Router.route('/books')
-  .get((req, res) => {
-    res.send('All Books in Library'); //books in library
-  })
-  .post((req, res) => {
-    res.send('New book added'); //add new book
-  });
+        res.send("Sorry, Page not Found.");
 
-Router.route('/users/:userId/books')
-  .post((req, res) => {
-    res.send('new book borrowed'); //borrow book
-  })
-  .get((req, res) => {
-    if (req.query.returned === 'false') {
-      return res.send(['book1', 'book2']);
-    }
-    res.send(['book1', 'book2', 'book3']);
-  })
-  .put((req, res) => {
-    res.send('book returned'); //return book
-  });
+    });
 
-//Modify books
-Router.put('/books/:bookId', (req, res) => {
-  res.send(req.body);
-});
-
-
-export default Router;
+export default router;

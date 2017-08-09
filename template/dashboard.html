@@ -12,7 +12,7 @@
 <head>
 
     <meta charset="utf-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="library management">
     <meta name="author" content="hellobooks">
@@ -22,6 +22,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/hb-admin.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="css/master.css" />
 
 </head>
 
@@ -31,10 +32,10 @@
 
         <!-- Navigations -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-           
+
             <div class="navbar-header">
 
-                <a class="navbar-brand" href="#">Admin Dashboard</a>
+                <a class="navbar-brand" href="#menu-toggle" id="menu-toggle">Menu</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -46,31 +47,31 @@
                             <a href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                          <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i>Notifications</a>
-                        </li> 
+                            <a href="notifications.html"><i class="fa fa-fw fa-envelope"></i>Notifications</a>
+                        </li>
                          <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li> 
+                            <a href="settings.html"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="index.html"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
             </ul> <!-- / top menu items -->
 
     <!-- SIDE BAR MENU  -->
-            
+
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active"> 
+                    <li class="active">
                         <a href="dashboard.html"><i class="fa fa-fw fa-book"></i>Library</a>
                     </li>
                     <li>
                         <a href="addbooks.html"><i class="fa fa-fw fa-plus"></i>Add Books</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-table"></i>Manage Books</a>
+                        <a href="deletebooks.html"><i class="fa fa-fw fa-table"></i>Manage Books</a>
                     </li>
 
                     <li>
@@ -101,41 +102,174 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
+                        <center>
                         <h1 class="page-header">
                             Library <small>Select your preferred reads.</small>
                         </h1>
-                       
-                     <!-- Search box -->               
+                        </center>
+
+                     <!-- Search box -->
                         <ol class="breadcrumb">
                             <li class="active">
                                 <form>
                                     <input type="text" name="search" placeholder="Search...">
-                                </form> 
+                                </form>
                             </li>
                         </ol> <!-- / searchBox -->
                     </div>
                 </div>
 
+
+       <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                <div class="span1">
+                <img height="100" width="100" src="http://i.ytimg.com/vi/uGBKzIY4mpc/0.jpg" />
+                </div>
+
+                    <!-- <img class="img-responsive" src="http://placehold.it/700x400" alt=""> -->
+                </a>
+                <h3>
+                    <a href="#">Things Fall Apart</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">The Famished Road</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Beast Of No Nation</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+      <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Name</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Name</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#"></a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+
+      <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Tears for Sale</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Purple Hibiscus</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Half of a Yello Sun</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+
+      <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">My name is Okon</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Story Behind the Biafra</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Live to Die another Day</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+
+
+
+
                 <!-- end /.row -->
 
                 <!-- Books arranged in rows-->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-3 col-md-6">
-                       
+
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
-                                    
+
                                     <div class="col-xs-3">
-                                        
-                                    
+
+
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        
+
                                         <div class="huge">01</div>
                                         <div class="medium">Things Fall apart</div>
                                         <div class="small"><i>Chinua Achebe</i></div>
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
 
@@ -153,7 +287,7 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        
+
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">02</div>
@@ -176,214 +310,13 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                       
+
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">03</div>
                                         <div class="medium">The Famished Road</div>
                                         <div class="small"><i>Ben Okri</i></div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                     
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">04</div>
-                                        <div class="medium">Americanah</div>
-                                        <div class="small"><i>Chimamanda Ngozi</i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
- <!-- /.row -->               
-<div class="row">
-                    <div class="col-lg-3 col-md-6">
-                       
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    
-                                    <div class="col-xs-3">
-                                        
-                                    
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        
-                                        <div class="huge">04</div>
-                                        <div class="medium">Things Fall apart</div>
-                                        <div class="small"><i>Chinua Achebe</i></div>
-                                    </div> 
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">05</div>
-                                        <div class="medium">Purple Hisbiscus</div>
-                                        <div class="small"><i>Chimamanda Ngozi</i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                       
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">06</div>
-                                        <div class="medium">The Famished Road</div>
-                                        <div class="small"><i>Ben Okri</i></div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                     
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">07</div>
-                                        <div class="medium">Americanah</div>
-                                        <div class="small"><i>Chimamanda Ngozi</i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
- <!-- /.row -->               
-<div class="row">
-                    <div class="col-lg-3 col-md-6">
-                       
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    
-                                    <div class="col-xs-3">
-                                        
-                                    
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        
-                                        <div class="huge">08</div>
-                                        <div class="medium">Things Fall apart</div>
-                                        <div class="small"><i>Chinua Achebe</i></div>
-                                    </div> 
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">09</div>
-                                        <div class="medium">Purple Hisbiscus</div>
-                                        <div class="small"><i>Chimamanda Ngozi</i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                       
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">10</div>
-                                        <div class="medium">The Famished Road</div>
-                                        <div class="small"><i>Ben Okri</i></div>
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -401,10 +334,10 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                     
+
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">11</div>
+                                        <div class="huge">04</div>
                                         <div class="medium">Americanah</div>
                                         <div class="small"><i>Chimamanda Ngozi</i></div>
                                     </div>
@@ -419,14 +352,21 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
+ <!-- /.row -->
+
+
+ <!-- /.row -->
+
 <!-- /.row>
 
             </div>
             <!-- /.container-fluid -->
 
         </div>
-        <!-- /#page-wrapper -->
+
+<!-- /#page-wrapper -->
+    </div>
 
     </div>
     <!-- /#wrapper -->
@@ -434,6 +374,14 @@
     <script src="js/jquery.js"></script>
 
     <script src="js/bootstrap.min.js"></script>
+        <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
 
 
 
