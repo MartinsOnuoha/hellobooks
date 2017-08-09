@@ -8,7 +8,7 @@ const borrowedBooksModel = model.books;
 /**
  *@class User
  *@classdesc Creates a new User in the Database
- *@classdesc assigns user methods 
+ *@classdesc assigns user methods
  */
 class User {
 
@@ -44,18 +44,20 @@ class User {
             catch((error) => {
 
                 if (error.name === "SequelizeUniqueConstraintError") {
+
                     res.status(400).json({
-                        "message": "Sorry, this email address is registered"
-                    });
-                    // res.status(400).json({"message": error.message});
+
+                        "message": "Sorry, this email address is registered"});
 
                 } else if (error === Sequelize.ValidationError) {
 
-                    res.status(400).json({"message": "An Error Occurred, Check Signup details"});
+                    res.status(400).json(
+                        {"message": "An Error Occurred, Check Signup details"});
 
                 } else {
 
-                    res.status(400).json({"message": "Oops! an Error Occurred."});
+                    res.status(400).json(
+                        {"message": "Oops! an Error Occurred."});
 
                 }
 
