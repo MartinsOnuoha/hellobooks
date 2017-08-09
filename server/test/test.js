@@ -1,4 +1,4 @@
-import app from '../app';
+import app from '../app.js';
 import {expect} from 'chai';
 import router from '../routes/routes';
 import should from 'should';
@@ -11,19 +11,15 @@ import supertest from 'supertest';
 
 // Generate random email addresses to run several tests
 const randomEmail = () => {
-
     // Initialize variable email to an empty string
     let email = ''
     const Alpha = 'abcdefghijklmnopqrstuvwxyz0123456789';
     for (let i = 0; i < 15; i++) {
-
         // Randomize testAlphabets and numbers
         email += Alpha.charAt(Math.floor(Math.random() * tAlpha.length));
-
     }
 
     return email + '@gmail.com';
-
 }
 // Create an instance of supertest with the target file as argument
 // Using the same const declaration, Initialize variables registeredUser&&user1
@@ -45,23 +41,18 @@ const appTest = supertest(app),
 describe("Routes", () => {
 
     it("should show landing page", (done) => {
-
         appTest.get("/api").
             end((error, res) => {
                 console.log(error, res.body, res.send);
                 done();
-
             });
-
     });
     it("should return 200", (done) => {
         appTest.get("/api").
             end((error, res) => {
                 console.log(error, res.body, res.status);
                 done();
-
             });
-
     });
     it("should register new users", (done) => {
         appTest.post("/api/users/signup").
@@ -71,9 +62,7 @@ describe("Routes", () => {
                 console.log(error);
                 expect(res.status).is.equal(201);
                 done();
-
             });
-
     });
     it("it should signin a registered user", (done) => {
         appTest.post("/api/users/signin").
@@ -82,9 +71,6 @@ describe("Routes", () => {
             end((error, res) => {
                 expect(res.status).is.equal(200);
                 done();
-
             });
-
     });
-
 })

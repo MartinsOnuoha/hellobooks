@@ -172,7 +172,7 @@ rules:
   one-var-declaration-per-line: error
   operator-assignment: error
   operator-linebreak: error
-  padded-blocks: error
+  padded-blocks: 0
   padding-line-between-statements: error
   prefer-arrow-callback: error
   prefer-const: error
