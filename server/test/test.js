@@ -4,6 +4,10 @@ import router from "../routes/routes";
 import should from "should";
 import supertest from "supertest";
 
+/*
+*@param null
+*@return String
+*/
 
 // Generate random email addresses to run several tests
 const randString = () => {
@@ -14,11 +18,13 @@ const randString = () => {
 
     // Loop through the list of characters
     for (let i = 0; i < 15; i++) {
+
         // Randomize testAlphabets and numbers
         email += tAlpha.charAt(Math.floor(Math.random() * tAlpha.length));
 
     }
     // Return the randomized characters with @... appended
+
     return email + "@gmail.com";
 
 }
@@ -26,7 +32,7 @@ const randString = () => {
 // Using the same const declaration, Initialize variables registeredUser&&user1
 const appTest = supertest(app),
     registeredUser = {
-        "email": "nfej5bl4s8f4uw0@gmail.com",
+        "email": "jtz2it7wf49j1dj@gmail.com",
         "password": "code"
     },
     user1 = {
@@ -38,7 +44,7 @@ const appTest = supertest(app),
         "membership": "Pro"
     };
 
-// Test the routes
+// Test routes
 describe("Routes", () => {
 
     it("should show landing page", (done) => {
@@ -47,14 +53,18 @@ describe("Routes", () => {
             end((error, res) => {
                 console.log(error, res.body, res.send);
                 done();
+
             });
+
     });
     it("should return 200", (done) => {
         appTest.get("/api").
             end((error, res) => {
                 console.log(error, res.body, res.status);
                 done();
+
             });
+
     });
     it("should register new users", (done) => {
         appTest.post("/api/users/signup").

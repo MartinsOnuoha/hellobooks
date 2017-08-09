@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "martinsonuoha",
+    "password": "cod3f4lls",
+    "database": "community-dev",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "martinsonuoha",
+    "password": "cod3f4lls",
+    "database": "community-test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}

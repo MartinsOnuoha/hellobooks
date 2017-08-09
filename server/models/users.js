@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+// import bcrypt from 'bcrypt';
 
 
 const user = (sequelize, DataTypes) => {
@@ -11,7 +11,8 @@ const user = (sequelize, DataTypes) => {
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         password: {
             type: DataTypes.STRING,
@@ -34,15 +35,15 @@ const user = (sequelize, DataTypes) => {
             associate() {
             // Associations
             }
-        },
-        hooks: {
-            beforeCreate: (users) => {
-
-                const hashedPassword = bcrypt.hashSync(users.password, 10);
-                users.password = hashedPassword;
-                return users;
-            },
         }
+        // hooks: {
+        //     beforeCreate: (users) => {
+        //
+        //         const hashedPassword = bcrypt.hashSync(users.password, 10);
+        //         users.password = hashedPassword;
+        //         return users;
+        //     },
+        // }
     });
 
     return usersModel;
