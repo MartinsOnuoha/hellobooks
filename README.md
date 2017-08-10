@@ -28,12 +28,12 @@ $ npm start
 > Create an account and Jump in our pile of books
 
 ## Functionalities
-> Registered Users can borrow available books from the Library
-> Registered Users can return books when done
-> Registered Users can view borrowing history
-> The application allows two levels of user account ```Free``` and ```Pro```
-> The ```Free``` account has the functionality of borrowing a specified ammount of books
-> This restriction is however removed with the ```Pro``` User account.
+> Registered Users can borrow available books from the Library<br />
+> Registered Users can return books when done <br />
+> Registered Users can view borrowing history <br />
+> The application allows two levels of user account ```Free``` and ```Pro``` <br />
+> The ```Free``` account has the functionality of borrowing a specified ammount of books <br />
+> This restriction is however removed with the ```Pro``` User account. <br />
 > An ```Admin``` User manages the entire library processes
 >> ```Add Books```
 >> ```Delete Books```
