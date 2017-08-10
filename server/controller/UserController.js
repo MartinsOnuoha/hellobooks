@@ -71,11 +71,8 @@ class User {
      */
 
     static borrowBook (req, res) {
-
         borrowedBooksModel.create(req.body).then(() => {
-
-            res.status(201).json({"message": "New Book added to shelf" });
-
+            res.status(201).json({"message": "New Book added to shelf"});
         }).
             catch((error) => {
 
