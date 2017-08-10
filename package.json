@@ -8,8 +8,12 @@
   },
   "scripts": {
     "start:dev": "./node_modules/.bin/nodemon ./server/app.js",
-    "test": "babel-node node_modules/mocha/bin/_mocha -- ./server/test/test.js",
     "lint": "eslint ./server/*.js --fix",
+    "test": "NODE_ENV=test mocha test/* --compilers js:babel-register",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./npm-debug.log --copy-files",
+    "heroku-postbuild": "NODE_ENV=production && npm run build && NODE_END=production sequelize db:migrate:undo:all && NODE_END=production sequelize db:migrate && npm run db:seed",
+    "db:seed": "DATABASE_URL=postgres://jgqzyhsxdurssn:17575264ada36f80b6c599d4dd9c222772d7830ba941aabf3b17c7ea0296dd67@ec2-107-22-160-199.compute-1.amazonaws.com:5432/daj4r6d59jfm08 sequelize db:seed:all",
+    "db:migrate": "cross-env DATABASE_URL=postgres://jgqzyhsxdurssn:17575264ada36f80b6c599d4dd9c222772d7830ba941aabf3b17c7ea0296dd67@ec2-107-22-160-199.compute-1.amazonaws.com:5432/daj4r6d59jfm08 sequelize db:migrate",
     "start": "babel-node ./server/app.js --exec babel-node --presets es2015,stage-2"
   },
   "dependencies": {

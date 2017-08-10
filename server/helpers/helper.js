@@ -1,6 +1,6 @@
 import moment from 'moment';
 import model from '../models';
-import util from '../utilities/limits';
+import util from 'limits';
 
 const borrowedBookModel = model.borrowedbooks;
 const userModel = model.users;

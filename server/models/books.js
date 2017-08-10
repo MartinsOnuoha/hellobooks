@@ -6,6 +6,10 @@ const book = (sequelize, DataTypes) => {
             "type": DataTypes.STRING,
             "allowNull": false
         },
+        category: {
+            "type": DataTypes.STRING,
+            "allowNull": false
+        },
         description: {
             "type": DataTypes.STRING,
             "allowNull": false
@@ -36,8 +40,11 @@ const book = (sequelize, DataTypes) => {
         }
     }, {
         classMethods: {
-            associate () {
-
+            associate (models) {
+                books.belongTo(model.borrowedbooks, {
+                    foreignKey: 'bookId',
+                    as: 'borrowed '
+                });
             }
         }
     });

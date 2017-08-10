@@ -1,6 +1,10 @@
-import Sequelize from "sequelize";
-import model from "../models";
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import Sequelize from 'sequelize';
+import model from '../models';
+import helper from '../middleware/helper';
 
+require('dotenv').config();
 
 const userModel = model.users;
 const borrowedBooksModel = model.books;
@@ -41,13 +45,9 @@ class User {
 
         }).
             catch((error) => {
-
                 if (error.name === "SequelizeUniqueConstraintError") {
-
                     res.status(400).json({
-
                         "message": "Sorry, this email address is registered"});
-
                 } else if (error === Sequelize.ValidationError) {
 
                     res.status(400).json(
@@ -64,8 +64,7 @@ class User {
 
     }
 
-    /*
-     *
+    /** *
      * @param {object} req
      * @param {object} res
      */
