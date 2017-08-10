@@ -6,7 +6,7 @@ Hello-Books is a simple application that manages <b>library</b> processes like <
 
 
 
-background details relevant to understanding what this module does
+background details below relevant to understanding what this app does
 
 ## Usage
 <b>Option 1</b>
@@ -28,30 +28,30 @@ $ npm start
 > Create an account and Jump in our pile of books
 
 ## Functionalities
-> 
-```
-> ge
-```
+> Registered Users can borrow available books from the Library
+> Registered Users can return books when done
+> Registered Users can view borrowing history
+> The application allows two levels of user account ```Free``` and ```Pro```
+> The ```Free``` account has the functionality of borrowing a specified ammount of books
+> This restriction is however removed with the ```Pro``` User account.
+> An ```Admin``` User manages the entire library processes
+>> ```Add Books```
+>> ```Delete Books```
+>> ```Modify Books```
 
-
-## Install
-
-With [npm](https://npmjs.org/) installed, run
-
-```
-$ npm install hello-books
-```
 
 ## Acknowledgments
 
-hello-books was inspired by..
+hello-books was inspired by ```Andela Fellowship```
 
 ## See Also
 
-- [`noffle/common-readme`](https://github.com/noffle/common-readme)
+https://www.pivotaltracker.com/n/projects/2084801 <code> Project Progress on PT Board </code>
+
 - ...
 
 ## License
 
-ISC
+```ISC``` <br />
+```MIT```
   
