@@ -29,6 +29,7 @@ const appTest = supertest(app),
         'password': 'code'
     },
     user1 = {
+<<<<<<< HEAD
         "username": "MartinsSS",
         "password": "code",
         // Call the randString function to genrate random email addresses
@@ -39,6 +40,18 @@ const appTest = supertest(app),
 
 // Test routes
 describe("Routes", () => {
+=======
+        'username': 'MartinsSS',
+        'password': 'code',
+        // Call the randString function to genrate random email addresses
+        'email': randomEmail(),
+        'role': 'user',
+        'membership': 'Pro'
+    };
+
+// Test routes
+describe('Routes', () => {
+>>>>>>> develop
 
     it("should show landing page", (done) => {
         appTest.get("/api").
