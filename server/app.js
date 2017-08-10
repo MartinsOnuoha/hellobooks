@@ -4,7 +4,7 @@ import express from "express";
 import morgan from "morgan";
 import router from "./routes/routes";
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 2000;
 const app = express();
 
 app.use(morgan("dev"));
