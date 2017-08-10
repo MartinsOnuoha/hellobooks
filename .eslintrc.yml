@@ -102,7 +102,7 @@ rules:
   no-lone-blocks: error
   no-lonely-if: error
   no-loop-func: error
-  no-magic-numbers: error
+  no-magic-numbers: 0
   no-mixed-operators: error
   no-mixed-requires: error
   no-multi-assign: error
@@ -164,7 +164,7 @@ rules:
   no-whitespace-before-property: error
   no-with: error
   nonblock-statement-body-position: error
-  object-curly-newline: error
+  object-curly-newline: 0
   object-curly-spacing: error
   object-property-newline: error
   object-shorthand: error
@@ -172,7 +172,7 @@ rules:
   one-var-declaration-per-line: error
   operator-assignment: error
   operator-linebreak: error
-  padded-blocks: error
+  padded-blocks: 0
   padding-line-between-statements: error
   prefer-arrow-callback: error
   prefer-const: error
@@ -184,7 +184,7 @@ rules:
   prefer-spread: error
   prefer-template: error
   quote-props: error
-  quotes: error
+  quotes: 0
   radix: error
   require-await: error
   require-jsdoc: error

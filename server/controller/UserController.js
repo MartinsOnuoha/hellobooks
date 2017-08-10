@@ -8,7 +8,6 @@ const borrowedBooksModel = model.books;
 /**
  *@class User
  *@classdesc Creates a new User in the Database
- *@classdesc assigns user methods
  */
 class User {
 
@@ -34,7 +33,7 @@ class User {
     }
 
     static signup (req, res) {
-
+        // Create new userModel with request from user
         userModel.create(req.body).then(() => {
 
             res.

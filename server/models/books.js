@@ -18,8 +18,8 @@ const book = (sequelize, DataTypes) => {
         title: {
             "type": DataTypes.STRING,
             "allowNull": false,
-            
-           
+
+
         },
         quantity: {
             "type": DataTypes.INTEGER,
@@ -37,7 +37,7 @@ const book = (sequelize, DataTypes) => {
     }, {
         classMethods: {
             associate () {
-                // Associations can be defined here
+
             }
         }
     });

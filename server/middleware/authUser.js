@@ -3,24 +3,34 @@ import jwt from "jsonwebtoken";
 import model from "../models";
 
 require("dotenv").config();
-const userModel = model.users;
 
+const userModel = model.users;
 const secret = process.env.SECRET;
 
 /**
  * @class Authentication class
- * @classdesc creates an authentication class
+ * @classdesc verifies user signin
  */
 
 class Authentication {
 
+    /**
+    *@param {object} req
+    *@param {object} res
+    *@return null
+    */
+
     static signin (req, res) {
 
-        userModel.findOne({"where": {"email": req.body.email}}).
+        userModel.findOne({
+            "where": {
+                "email": req.body.email,
+                "password": req.body.password
+            }
+        }).
             then((user) => {
 
-                if (user && bcrypt.compare(req.
-                    body.password, user.dataValues.password)) {
+                if (user && req.body.password === user.dataValues.password) {
 
                     const token = jwt.sign({
                         "id": user.dataValues.id,
@@ -34,6 +44,8 @@ class Authentication {
                         "message": "signed in"
 
                     };
+                    console.log(req.body.password);
+                    console.log(user.dataValues.password);
 
                     res.status(200).send(response);
 

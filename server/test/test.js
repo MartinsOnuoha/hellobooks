@@ -1,48 +1,46 @@
-import app from "../app";
-import {expect} from "chai";
-import router from "../routes/routes";
-import should from "should";
-import supertest from "supertest";
+import app from '../app.js';
+import {expect} from 'chai';
+import router from '../routes/routes';
+import should from 'should';
+import supertest from 'supertest';
 
+/*
+*@param null
+*@return String
+*/
 
 // Generate random email addresses to run several tests
-const randString = () => {
-
+const randomEmail = () => {
     // Initialize variable email to an empty string
-    let email = ""
-    const tAlpha = "abcdefghijklmnopqrstuvwxyz0123456789";
-
-    // Loop through the list of characters
+    let email = ''
+    const Alpha = 'abcdefghijklmnopqrstuvwxyz0123456789';
     for (let i = 0; i < 15; i++) {
         // Randomize testAlphabets and numbers
-        email += tAlpha.charAt(Math.floor(Math.random() * tAlpha.length));
-
+        email += Alpha.charAt(Math.floor(Math.random() * tAlpha.length));
     }
-    // Return the randomized characters with @... appended
-    return email + "@gmail.com";
 
+    return email + '@gmail.com';
 }
 // Create an instance of supertest with the target file as argument
 // Using the same const declaration, Initialize variables registeredUser&&user1
 const appTest = supertest(app),
     registeredUser = {
-        "email": "nfej5bl4s8f4uw0@gmail.com",
-        "password": "code"
+        'email': 'jtz2it7wf49j1dj@gmail.com',
+        'password': 'code'
     },
     user1 = {
         "username": "MartinsSS",
         "password": "code",
         // Call the randString function to genrate random email addresses
-        "email": randString(),
+        "email": randomEmail(),
         "role": "user",
         "membership": "Pro"
     };
 
-// Test the routes
+// Test routes
 describe("Routes", () => {
 
     it("should show landing page", (done) => {
-
         appTest.get("/api").
             end((error, res) => {
                 console.log(error, res.body, res.send);
@@ -64,9 +62,7 @@ describe("Routes", () => {
                 console.log(error);
                 expect(res.status).is.equal(201);
                 done();
-
             });
-
     });
     it("it should signin a registered user", (done) => {
         appTest.post("/api/users/signin").
@@ -75,9 +71,6 @@ describe("Routes", () => {
             end((error, res) => {
                 expect(res.status).is.equal(200);
                 done();
-
             });
-
     });
-
 })
