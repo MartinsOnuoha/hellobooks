@@ -7,10 +7,10 @@
     "node": "8.2.1"
   },
   "scripts": {
-    "start:dev": "./node_modules/.bin/nodemon ./server/bin/www.js",
+    "start:dev": "./node_modules/.bin/nodemon ./server/bin/app.js",
     "test": "babel-node node_modules/mocha/bin/_mocha -- ./server/test/test.js",
     "lint": "eslint ./server/*.js --fix",
-    "start": "babel-node ./server/bin/www --exec babel-node --presets es2015,stage-2"
+    "start": "babel-node ./server/bin/app.js --exec babel-node --presets es2015,stage-2"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",
