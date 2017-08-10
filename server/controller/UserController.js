@@ -41,7 +41,6 @@ class User {
 
         }).
             catch((error) => {
-
                 if (error.name === "SequelizeUniqueConstraintError") {
 
                     res.status(400).json({
