@@ -9,18 +9,26 @@ Hello-Books is a simple application that manages <b>library</b> processes like <
 background details relevant to understanding what this module does
 
 ## Usage
-https://hellobooksproject.herokuapp.com/
 <b>Option 1</b>
+> Navigate to App Url.
+```
+https://hellobooksproject.herokuapp.com/ <br />
+```
+<b>Option 2</b>
 > <code>git clone</code> this repository
+> Install Packages
+ ```
+$ npm install
+```
+> Start Sever 
+```
+$ npm start
+```
+> Open ```index.html``` in browser
+> Create an account and Jump in our pile of books
+
+## Functionalities
 > 
-outputs
-
-```
-hello warld
-```
-
-## API Routes
-
 ```
 > ge
 ```
