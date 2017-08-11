@@ -41,39 +41,39 @@ class Authentication {
     */
     // Sign in Users
 
-    static signin (req, res) {
-        userModel.findOne({
-            "where": {
-                "email": req.body.email,
-                "password": req.body.password
-            }
-        }).
-            then((user) => {
+    // static signin (req, res) {
+    //     userModel.findOne({
+    //         "where": {
+    //             "email": req.body.email,
+    //             "password": req.body.password
+    //         }
+    //     }).
+    //         then((user) => {
 
-                if (user && req.body.password === user.dataValues.password) {
+    //             if (user && req.body.password === user.dataValues.password) {
 
-                    const token = jwt.sign({
-                        "id": user.dataValues.id,
-                        "email": user.dataValues.email,
-                        "membership": user.dataValues.membership,
-                        "role": user.dataValues.role
-                    }, secret, {"expiresIn": "24h"});
+    //                 const token = jwt.sign({
+    //                     "id": user.dataValues.id,
+    //                     "email": user.dataValues.email,
+    //                     "membership": user.dataValues.membership,
+    //                     "role": user.dataValues.role
+    //                 }, secret, {"expiresIn": "24h"});
 
-                    const response = {
-                        "data": {token},
-                        "message": "signed in"
-                    };
-                    console.log(req.body.password);
-                    console.log(user.dataValues.password);
-                    res.status(200).send(response);
-                } else {
-                    res.status(404).send({"message": "User does not exist"});
-                }
+    //                 const response = {
+    //                     "data": {token},
+    //                     "message": "signed in"
+    //                 };
+    //                 console.log(req.body.password);
+    //                 console.log(user.dataValues.password);
+    //                 res.status(200).send(response);
+    //             } else {
+    //                 res.status(404).send({"message": "User does not exist"});
+    //             }
 
-            }).
-            catch((err) => res.send({message: "An Error Occurred"}));
+    //         }).
+    //         catch((err) => res.send({message: "An Error Occurred"}));
 
-    }
+    // }
 
     // Verify User exists
     static verifyUser (req, res, next) {
@@ -81,7 +81,7 @@ class Authentication {
             res.status(401).json({message: 'Invalid/expired token'});
         } else {
             const decoded = jwt.verify(req.headers.authorization, secret);
-            userModel.findOne({ where: {email: decoded.email, id: decoded.id}}).then((user) => {
+            userModel.findOne({where: {email: decoded.email, id: decoded.id}}).then((user) => {
                 if (user) {
                     req.body.userid = decoded.id;
                     req.membership = decoded.membership;

@@ -4,7 +4,7 @@ import model from '../models';
 
 
 require('dotenv').config();
-
+const secret = process.env.SECRET;
 const userModel = model.users;
 const borrowedBooksModel = model.books;
 
@@ -91,23 +91,18 @@ class User {
                         "message": "signed in"
 
                     };
-                    console.log(req.body.password);
-                    console.log(user.dataValues.password);
-
-                    res.status(200).send(response);
+                    console.log(response);
+                    return res.status(200).json(response);
 
                 } else {
 
                     res.status(404).send({"message": "User does not exist"});
 
                 }
-
             }).
             catch((err) => res.send(err));
 
     }
-
-
 
     // User Profile
 

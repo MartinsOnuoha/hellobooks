@@ -29,11 +29,10 @@ const appTest = supertest(app),
         'password': 'code'
     },
     user1 = {
-        'username': 'MartinsSS',
+        'username': 'fromMars',
         'password': 'code',
-        // Call the randString function to genrate random email addresses
-        'email': randomEmail(),
-        'role': 'user',
+        'email': "martinsonuoha@gmail.com",
+        'role': 'admin',
         'membership': 'Pro'
     };
 
