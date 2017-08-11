@@ -12,7 +12,7 @@ import supertest from 'supertest';
 // Generate random email addresses to run several tests
 const randomEmail = () => {
     // Initialize variable email to an empty string
-    let email = ''
+    let email = '';
     const Alpha = 'abcdefghijklmnopqrstuvwxyz0123456789';
     for (let i = 0; i < 15; i++) {
         // Randomize testAlphabets and numbers
@@ -20,7 +20,7 @@ const randomEmail = () => {
     }
 
     return email + '@gmail.com';
-}
+};
 // Create an instance of supertest with the target file as argument
 // Using the same const declaration, Initialize variables registeredUser&&user1
 const appTest = supertest(app),

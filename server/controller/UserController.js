@@ -1,8 +1,8 @@
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
+import helper from '../helpers/helper';
 import Sequelize from 'sequelize';
 import model from '../models';
-import helper from '../middleware/helper';
+
 
 require('dotenv').config();
 
@@ -14,9 +14,7 @@ const borrowedBooksModel = model.books;
  *@classdesc Creates a new User in the Database
  */
 class User {
-
-
-    /*
+    /** 
    * @param {Object} req
    * @param {Object} res
    * @return null
@@ -26,12 +24,9 @@ class User {
         userModel.findAndCountAll().
             then((response) => {
                 res.status(200).json(response);
-
             }).
             catch((err) => {
-
                 res.send(err);
-
             });
 
     }
@@ -39,29 +34,21 @@ class User {
     static signup (req, res) {
         // Create new userModel with request from user
         userModel.create(req.body).then(() => {
-
             res.
                 status(201).json({"message": "SignUp Successful"});
-
         }).
             catch((error) => {
                 if (error.name === "SequelizeUniqueConstraintError") {
                     res.status(400).json({
                         "message": "Sorry, this email address is registered"});
                 } else if (error === Sequelize.ValidationError) {
-
                     res.status(400).json(
                         {"message": "An Error Occurred, Check Signup details"});
-
                 } else {
-
                     res.status(400).json(
                         {"message": "Oops! an Error Occurred."});
-
                 }
-
             });
-
     }
 
     /** *
@@ -80,6 +67,91 @@ class User {
             });
 
     }
+
+    static signin(req, res) {
+        userModel.findOne({where: {email: req.body.email}}).
+            then((user) => {
+                if (user && bcrypt.compareSync(req.body.password, user.dataValues.password)) {
+                    const token = helper.generateToken(user.dataValues);
+                    const response = {
+                        message: 'signed in',
+                        data: {token}
+                    };
+                    res.status(200).json({response});
+                } else if (!req.body.email || !req.body.password) {
+                    res.status(404).json({
+                        "message": 'Email and password is required'});
+                } else {
+                    res.status(404).json({message: 'Invalid email or password'});
+                }
+            }).
+            catch((error) => res.send({message: 'Sorry, An Error Occurred'}));
+    }
+
+    // User Profile
+
+    static profilePage (req, res) {
+        if (!req.headers.Authorization) {
+            res.status(401).
+                json({message: 'Invalid/Expired token'});
+            
+        }
+    }
+
+    static getUserBooks (req, res) {
+        const returnStatus = req.query.returned;
+        const query = {};
+
+        if (returnStatus === undefined) {
+            query.where = {
+                userid: req.body.userid
+            };
+        } else if (returnStatus === 'false') {
+            query.where = {
+                $and: [
+                    {userid: req.body.userid},
+                    {returnstatus: false}
+                ]
+            };
+        } else {
+            query.where = {
+                $and: [
+                    {userid: req.body.userid},
+                    {returnstatus: true}
+                ]
+            };
+        }
+
+        borrowedBooksModel.findAll(query).
+            then((response) => {
+                res.status(200).json({books: response});
+            }).catch((error) => {
+                res.status(404).json({message: error});
+            });
+    }
+
+    /**
+   * @param { object } req 
+   * @param { object } res
+   * @returns { void }
+   */
+    static booksReturned(req, res) {
+        const returnStatus = req.query.returned;
+        borrowedBooksModel.findAll({
+            where: {returnstatus: returnStatus}}).then((response) => {
+            if (response.length === 0) {
+                res.status(200).json({
+                    message: 'You have not returned any book'
+                });
+            } else {
+                res.status(200).json({returned: response});
+            }
+        }).
+            catch((error) => {
+                res.status(404).json({message: error});
+            });
+    }
+
 
 }
 
