@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt';
-import helper from '../helpers/helper';
 import Sequelize from 'sequelize';
 import model from '../models';
 
@@ -68,25 +67,47 @@ class User {
 
     }
 
-    static signin(req, res) {
-        userModel.findOne({where: {email: req.body.email}}).
+    static signin (req, res) {
+
+        userModel.findOne({
+            "where": {
+                "email": req.body.email,
+                "password": req.body.password
+            }
+        }).
             then((user) => {
-                if (user && bcrypt.compareSync(req.body.password, user.dataValues.password)) {
-                    const token = helper.generateToken(user.dataValues);
+
+                if (user && req.body.password === user.dataValues.password) {
+
+                    const token = jwt.sign({
+                        "id": user.dataValues.id,
+                        "email": user.dataValues.email,
+                        "membership": user.dataValues.membership,
+                        "role": user.dataValues.role
+                    }, secret, {"expiresIn": "24h"});
+
                     const response = {
-                        message: 'signed in',
-                        data: {token}
+                        "data": {token},
+                        "message": "signed in"
+
                     };
-                    res.status(200).json({response});
-                } else if (!req.body.email || !req.body.password) {
-                    res.status(404).json({
-                        "message": 'Email and password is required'});
+                    console.log(req.body.password);
+                    console.log(user.dataValues.password);
+
+                    res.status(200).send(response);
+
                 } else {
-                    res.status(404).json({message: 'Invalid email or password'});
+
+                    res.status(404).send({"message": "User does not exist"});
+
                 }
+
             }).
-            catch((error) => res.send({message: 'Sorry, An Error Occurred'}));
+            catch((err) => res.send(err));
+
     }
+
+
 
     // User Profile
 
@@ -94,7 +115,7 @@ class User {
         if (!req.headers.Authorization) {
             res.status(401).
                 json({message: 'Invalid/Expired token'});
-            
+
         }
     }
 
