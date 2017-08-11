@@ -1,7 +1,7 @@
 # Hello-Books
 > Library management
 <hr>
-<img src=https://img.shields.io/badge/Sniffed%20by-HoundCI-brightgreen.svg />
+<img src=https://img.shields.io/badge/Sniffed%20by-HoundCI-brightgreen.svg /> <img src=https://img.shields.io/github/license/mashape/apistatus.svg />
 Hello-Books is a simple application that manages <b>library</b> processes like <b>stocking</b>, <b>tracking</b> and <b>renting</b> of books.
 
 
@@ -12,7 +12,7 @@ background details below relevant to understanding what this app does
 <b>Option 1</b>
 > Navigate to App Url.
 ```
-https://hellobooksproject.herokuapp.com/ <br />
+https://hellobooksproject.herokuapp.com/
 ```
 <b>Option 2</b>
 > <code>git clone</code> this repository
@@ -38,6 +38,17 @@ $ npm start
 >> ```Add Books```
 >> ```Delete Books```
 >> ```Modify Books```
+
+## API ROUTES
+> <b>POST</b> : ```/api/users/signup```
+> <b>POST</b> : ```/api/users/signin```
+> <b>POST</b> : ```/api/books```
+> <b>PUT</b> : ```/api/books/<bookId>```
+> <b>GET</b> : ```/api/books```
+> <b>GET</b> : ```/api/users/<userId>/books?returned=false```
+> <b>POST</b> : ```/api/users/<userId>/books```
+> <b>PUT</b> : ```/api/users/<userId>/books```
+
 
 
 ## Acknowledgments
