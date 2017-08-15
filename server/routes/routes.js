@@ -3,17 +3,17 @@ import BookController from "../controller/booksController";
 import UserController from "../controller/UserController";
 import express from "express";
 import helper from '../helpers/helper';
+// Import UserControl from "../controller/userControl";
 
 
 const router = express.Router();
-
 
 // Home route
 router.get("/", (req, res) => {
     res.status(200).send("Welcome to Hello Books");
 });
 
-//Create a new User 
+// Create a new User
 router.post("/users/signup", UserController.signup);
 
 // Sign in Existing User

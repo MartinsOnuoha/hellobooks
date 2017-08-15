@@ -1,9 +1,9 @@
-require("dotenv").config();
 import bodyParser from "body-parser";
 import express from "express";
 import morgan from "morgan";
 import router from "./routes/routes";
 
+require("dotenv").config();
 const port = process.env.PORT || 8000;
 const app = express();
 

@@ -1,6 +1,6 @@
-import bcrypt from 'bcrypt';
 import Sequelize from 'sequelize';
 import model from '../models';
+import jwt from 'jsonwebtoken';
 
 
 require('dotenv').config();
@@ -13,7 +13,7 @@ const borrowedBooksModel = model.books;
  *@classdesc Creates a new User in the Database
  */
 class User {
-    /** 
+    /**
    * @param {Object} req
    * @param {Object} res
    * @return null
@@ -66,43 +66,25 @@ class User {
             });
 
     }
-
     static signin (req, res) {
-
-        userModel.findOne({
-            "where": {
-                "email": req.body.email,
-                "password": req.body.password
+        userModel.findOne({ where:
+            {email: req.body.email,
+                password: req.body.password}
+        }).then((user) => {
+            if (!user) {
+                res.status(400).send('username and password mismatch');
             }
-        }).
-            then((user) => {
-
-                if (user && req.body.password === user.dataValues.password) {
-
-                    const token = jwt.sign({
-                        "id": user.dataValues.id,
-                        "email": user.dataValues.email,
-                        "membership": user.dataValues.membership,
-                        "role": user.dataValues.role
-                    }, secret, {"expiresIn": "24h"});
-
-                    const response = {
-                        "data": {token},
-                        "message": "signed in"
-
-                    };
-                    console.log(response);
-                    return res.status(200).json(response);
-
-                } else {
-
-                    res.status(404).send({"message": "User does not exist"});
-
-                }
-            }).
-            catch((err) => res.send(err));
-
+            const token = jwt.sign({
+                "id": user.dataValues.id,
+                "email": user.dataValues.email,
+                "role": user.dataValues.role
+            }, secret, {"expiresIn": "24h"});
+            res.json({message: "success",
+                token: token
+            });
+        });
     }
+
 
     // User Profile
 
@@ -147,7 +129,7 @@ class User {
     }
 
     /**
-   * @param { object } req 
+   * @param { object } req
    * @param { object } res
    * @returns { void }
    */
