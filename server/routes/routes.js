@@ -11,6 +11,7 @@ const router = express.Router();
 // Home route
 router.get("/", (req, res) => {
     res.status(200).send("Welcome to Hello Books");
+    console.log("Welcome!");
 });
 
 // Create a new User
@@ -44,12 +45,12 @@ router.get('/users/:userId/', Auth.verifyUser, UserController.profilePage);
 router.route("*").
     post((req, res) => {
 
-        res.send("Sorry, Page not Found.");
+        res.send("404, Page not Found.");
 
     }).
     get((req, res) => {
 
-        res.send("Sorry, Page not Found.");
+        res.send("404, Page not Found.");
 
     });
 

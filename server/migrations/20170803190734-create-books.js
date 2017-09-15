@@ -30,6 +30,11 @@ module.exports = {
                 allowNull: false,
                 defaultValue: 1
             },
+            category: {
+                type: Sequelize.STRING,
+                allowNull: false
+
+            },
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE

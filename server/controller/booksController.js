@@ -64,9 +64,12 @@ class Book {
     static getBook (req, res) {
         bookModel.findAll().then((response) => {
             res.send(response);
+            console.log(response);
         }).
             catch((error) => {
-                res.status(404).json({message: "Sorry, An Error Occured"});
+                // res.status(404).json({message: "Sorry, An Error Occured"});
+                res.send(error);
+                console.log(error);
             });
 
     }

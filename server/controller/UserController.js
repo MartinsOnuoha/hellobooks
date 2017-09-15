@@ -79,7 +79,7 @@ class User {
                 "email": user.dataValues.email,
                 "role": user.dataValues.role
             }, secret, {"expiresIn": "24h"});
-            res.json({message: "success",
+            res.json({message: "login successful",
                 token: token
             });
         });
