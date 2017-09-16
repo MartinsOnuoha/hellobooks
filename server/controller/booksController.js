@@ -22,12 +22,16 @@ class Book {
             catch((error) => {
             // Check if all fields are supplied.
                 if (error.name === "SequelizeValidationError") {
-                    res.status(400).
+                    res.sendStatus(400).
                         json({"message": "One or more fields are empty"});
+                // console.log(error);
                 // Check if a duplicate request was made.
                 } else if (error.name === "SequelizeUniqueConstraintError") {
                     res.status(409).
                         json({"message": "Two books cannot have the same ISBN number"});
+                } else if (req.body.quantity <= 0) {
+                    res.json({message: "invalid Quantity input!"});
+
                 } else {
                     res.send({'message': 'Oops, An Error Occurred.'});
                     console.log(error);

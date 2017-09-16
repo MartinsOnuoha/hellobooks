@@ -1,4 +1,5 @@
-import bcrypt from 'bcrypt';
+// import bcrypt from 'bcrypt';
+const bcrypt = require('bcrypt');
 
 module.exports = {
     up(queryInterface) {

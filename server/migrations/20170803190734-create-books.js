@@ -9,7 +9,7 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             isbn: {
-
+                unique: true,
                 type: Sequelize.STRING
             },
             title: {
@@ -18,7 +18,7 @@ module.exports = {
             author: {
                 type: Sequelize.STRING
             },
-            date: {
+            year: {
                 type: Sequelize.STRING,
                 allowNull: true
             },
@@ -35,12 +35,16 @@ module.exports = {
                 allowNull: false
 
             },
+            image: {
+                type: Sequelize.STRING,
+                allowNull: false
+            },
             createdAt: {
-                allowNull: false,
+                allowNull: true,
                 type: Sequelize.DATE
             },
             updatedAt: {
-                allowNull: false,
+                allowNull: true,
                 type: Sequelize.DATE
             }
         });
