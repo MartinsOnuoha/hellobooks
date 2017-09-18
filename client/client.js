@@ -1,1 +1,1 @@
-/* Click.js */
+/* Client.js */
