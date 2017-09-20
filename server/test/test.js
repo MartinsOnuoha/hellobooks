@@ -12,46 +12,32 @@ import supertest from 'supertest';
 // Generate random email addresses to run several tests
 const randomEmail = () => {
     // Initialize variable email to an empty string
-    let email = ''
+    let email = '';
     const Alpha = 'abcdefghijklmnopqrstuvwxyz0123456789';
     for (let i = 0; i < 15; i++) {
         // Randomize testAlphabets and numbers
-        email += Alpha.charAt(Math.floor(Math.random() * tAlpha.length));
+        email += Alpha.charAt(Math.floor(Math.random() * Alpha.length));
     }
 
     return email + '@gmail.com';
-}
+};
 // Create an instance of supertest with the target file as argument
 // Using the same const declaration, Initialize variables registeredUser&&user1
 const appTest = supertest(app),
     registeredUser = {
-        'email': 'jtz2it7wf49j1dj@gmail.com',
+        'email': 'om4pwa1rjbgx0w6@gmail.com',
         'password': 'code'
     },
     user1 = {
-<<<<<<< HEAD
-        "username": "MartinsSS",
-        "password": "code",
-        // Call the randString function to genrate random email addresses
-        "email": randomEmail(),
-        "role": "user",
-        "membership": "Pro"
-    };
-
-// Test routes
-describe("Routes", () => {
-=======
-        'username': 'MartinsSS',
+        'username': 'fromMars',
         'password': 'code',
-        // Call the randString function to genrate random email addresses
-        'email': randomEmail(),
-        'role': 'user',
+        'email': "martinsonuoha@gmail.com",
+        'role': 'admin',
         'membership': 'Pro'
     };
 
 // Test routes
 describe('Routes', () => {
->>>>>>> develop
 
     it("should show landing page", (done) => {
         appTest.get("/api").
@@ -86,4 +72,5 @@ describe('Routes', () => {
                 done();
             });
     });
-})
+
+});

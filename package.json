@@ -7,15 +7,25 @@
     "node": "8.2.1"
   },
   "scripts": {
-    "start:dev": "./node_modules/.bin/nodemon ./server/bin/app.js",
-    "test": "babel-node node_modules/mocha/bin/_mocha -- ./server/test/test.js",
+    "start:dev": "nodemon ./server/app.js --exec babel-node --presets es2015,stage-2",
     "lint": "eslint ./server/*.js --fix",
-    "start": "babel-node ./server/bin/app.js --exec babel-node --presets es2015,stage-2"
+    "test": "NODE_ENV=test mocha ./server/test/test --compilers js:babel-register",
+    "heroku-postbuild": "NODE_ENV=production && npm run build && NODE_END=production sequelize db:migrate:undo:all && NODE_END=production sequelize db:migrate",
+    "db:seed": "DATABASE_URL=postgres://cfthyiwa:KyGJVxFyR0MM15JQRG8fFHup85r0vgoQ@stampy.db.elephantsql.com:5432/cfthyiwa sequelize db:seed:all",
+    "db:migrate": "cross-env DATABASE_URL=postgres://cfthyiwa:KyGJVxFyR0MM15JQRG8fFHup85r0vgoQ@stampy.db.elephantsql.com:5432/cfthyiwa sequelize db:migrate",
+    "start": "babel-node ./server/app.js --exec babel-node --presets es2015,stage-2"
   },
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.26.0",
+    "babel-istanbul": "^0.12.2",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.24.1",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
-    "cool-ascii-faces": "1.3.4",
     "dotenv": "^4.0.0",
     "ejs": "2.5.6",
     "express": "^4.15.3",
@@ -24,6 +34,7 @@
     "pg": "^7.0.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.4.2",
+    "sequelize-cli": "^2.8.0",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
