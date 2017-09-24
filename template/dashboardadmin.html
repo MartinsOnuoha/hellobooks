@@ -1,61 +1,264 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- favicon --> 
+    <link rel="icon" href="assets/images/bunny.gif" type="image/gif" sizes="16x16">
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link href="css/materializeicons.css" rel="stylesheet">
     <!--Import materialize.css-->
+    <link type="text/css" href="assets/fonts/ubuntu-font.css" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> -->
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <style>
-         div #cards {
-            width : 200px;	
-            height : 200px;				
-         }
-    </style>
-  </head>
+<style>
+.thumbnail {
+  height: 100px;
+  width: 100px;
+}
 
-  <body>
+.container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.cover {
+  text-align: center;
+  margin: 100px auto;
+  padding-top: 3px; 
+  width: 300px;
+  height: 50px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+  background: #2b303b;
+  color: #262626;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+ 
+.container-1 input#search{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fafafa;
+}
+
+body{
+  font-family: 'Ubuntu mono', normal;
+}
+ 
+.box{
+  margin: 100px auto;
+  width: 300px;
+  height: 50px;
+}
+
+div #cards {
+  width : 200px;	
+  height : 200px;	
+  			
+         }
+
+
+</style>
+</head>
+
+<body class="grey lighten-1">
 <!-- navbar -->
 <div class="navbar-fixed">
 <nav class="nav-extended">
-    <div class="nav-content teal">
+    <div class="nav-content" style="background: #212429;">
       <ul class="tabs tabs-transparent">
         <li class="tab"><a class="active" href="#test1">Library<i class="material-icons left">library_books</i></a></li>
-        <li class="tab"><a href="#test2">Borrowed Books<i class="material-icons left">library_add</i></a></li>
+        <li class="tab"><a href="#test2">Add Books<i class="material-icons left">library_add</i></a></li>
         <li class="tab"><a href="#test3">History<i class="material-icons left">history</i></a></li>
-        <li class="tab"><a href="#test4">Profile<i class="material-icons left">account_circle</i></a></li>
         <li class="tab"><a href="#test5">Edit Books<i class="material-icons left">mode_edit</i></a></li>
-        <li class="tab"><a href="#test6">Delete Books<i class="material-icons left">delete</i></a></li>
+        <li class="tab"><a href="#test4">Profile<i class="material-icons left">account_circle</i></a></li>
+        
+        <!-- <li class="tab"><a href="#test6">Delete Books<i class="material-icons left">delete</i></a></li> -->
       </ul>
     </div>
   </nav>
 </div>
 
 <!-- Library Tab -->
-  <div id="test1" class="col s12">Library
+  <div id="test1" class="col s12">
     <form>
-      <div class="input-field">
-        <input id="search" type="search" required>
-        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons">close</i>
-      </div>
+        <div class="box">
+            <div class="container-1">
+                <span class="icon"><i class="material-icons" style="padding-right: 120px; font-size: 40px;">search</i></span>
+                <input type="search" id="search" placeholder="Search..." />
+            </div>
+        </div>
     </form>
+    <!-- <form>
+      <nav class="blue lighten-4" style="width: 50%; border-radius: 10px 10px;">
+        <div class="nav-wrapper">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                 <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+       </nav>
+    </form> -->
+<!-- CARDS ROW -->
+<div class = "row">
+  <!-- card -->
+   <div class = "col s12 m3">
+      <div class = "card blue-grey lighten-4 sticky-action hoverable">
+         <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/handpress.gif" height="293px" /> 
+                           
+         </div>
+         
+         <!-- <div class = "card-content activator">                  
+            <p>Click the image to reveal more information.</p>
+         </div> -->
+         
+         <div class = "card-reveal">
+            <span class = "card-title grey-text text-darken-4">About Book
+               <i class = "material-icons right">close</i></span>
+               <hr>
+               <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                   may or may not feel as though I have wasted your precious time, but really we
+                   both know you had nothing meaningful to do with your time anyways :-).
+                   <p><label>Author: </label></p>
+                   <p><label>Copies: </label></p>
+               </p>
+         </div>
+         
+         <div class = "card-action">
+             <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                 <i class="material-icons left">add_shopping_cart</i></button> 
+                 <span class="new badge purple lighten-2 pulse"></span>
+          </div>
+      </div>
+   </div>
+    <!-- card -->
+   <div class = "col s12 m3">
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/giphy.gif" height="293px">                
+          </div>
+          
+          <!-- <div class = "card-content activator">                  
+             <p>Click the image to reveal more information.</p>
+          </div> -->
+          
+          <div class = "card-reveal">
+             <span class = "card-title grey-text text-darken-4">About Book
+                <i class = "material-icons right">close</i></span>
+                <hr>
+                <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                   may or may not feel as though I have wasted your precious time, but really we
+                   both know you had nothing meaningful to do with your time anyways :-).
+                   <p><label>Author: </label></p>
+                   <p><label>Copies: </label></p>
+                 </p>
+          </div>
+          
+          <div class = "card-action">
+               <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                 <i class="material-icons left">add_shopping_cart</i></button>
+                 <span class="new badge teal darken-1 pulse"></span>
+          </div>
+       </div>
+    </div>
+    <!-- card -->
+    <div class = "col s12 m3">
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/page-gif.gif" height="293px">                
+          </div>
+          
+          <!-- <div class = "card-content activator">                  
+             <p>Click the image to reveal more information.</p>
+          </div> -->
+          
+          <div class = "card-reveal">
+             <span class = "card-title grey-text text-darken-4">About Book
+                <i class = "material-icons right">close</i></span>
+                <hr>
+                <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                   may or may not feel as though I have wasted your precious time, but really we
+                   both know you had nothing meaningful to do with your time anyways :-).
+                   <p><label>Author: </label></p>
+                   <p><label>Copies: </label></p>
+                 </p>
+          </div>
+          
+          <div class = "card-action">
+               <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                 <i class="material-icons left">add_shopping_cart</i></button>
+                 <span class="new badge light-green pulse"></span>
+          </div>
+       </div>
+    </div>
+     <!-- card -->
+    <div class = "col s12 m3">
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/shame.gif" height="293px">                
+          </div>
+          
+          <!-- <div class = "card-content activator">                  
+             <p>Click the image to reveal more information.</p>
+          </div> -->
+          
+          <div class = "card-reveal">
+             <span class = "card-title grey-text text-darken-4">About Book
+                <i class = "material-icons right">close</i></span>
+                <hr>
+                <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                   may or may not feel as though I have wasted your precious time, but really we
+                   both know you had nothing meaningful to do with your time anyways :-).
+                   <p><label>Author: </label></p>
+                   <p><label>Copies: </label></p>
+                 </p>
+          </div>
+          
+          <div class = "card-action">
+               <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                 <i class="material-icons left">add_shopping_cart</i></button>
+          </div>
+       </div>
+    </div>
+</div>
 
-<!-- CARDS -->
+<!-- /ROW -->
+
+<!-- CARDS ROW-->
 <div class = "row">
    <!-- card -->
     <div class = "col s12 m3">
-       <div class = "card blue-grey lighten-4">
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
           <div class="card-image waves-effect waves-block waves-light">
-             <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/sundribble.gif" height="293px" /> 
+                            
           </div>
           
-          <div class = "card-content activator">                  
+          <!-- <div class = "card-content activator">                  
              <p>Click the image to reveal more information.</p>
-          </div>
+          </div> -->
           
           <div class = "card-reveal">
              <span class = "card-title grey-text text-darken-4">About Book
@@ -66,28 +269,25 @@
                     both know you had nothing meaningful to do with your time anyways :-).
                     <p><label>Author: </label></p>
                     <p><label>Copies: </label></p>
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
-                  </p>
+                </p>
           </div>
           
           <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+              <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
            </div>
        </div>
     </div>
      <!-- card -->
     <div class = "col s12 m3">
-        <div class = "card blue-grey lighten-4">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/runswim.gif" height="293px">                
            </div>
            
-           <div class = "card-content activator">                  
+           <!-- <div class = "card-content activator">                  
               <p>Click the image to reveal more information.</p>
-           </div>
+           </div> -->
            
            <div class = "card-reveal">
               <span class = "card-title grey-text text-darken-4">About Book
@@ -98,28 +298,25 @@
                     both know you had nothing meaningful to do with your time anyways :-).
                     <p><label>Author: </label></p>
                     <p><label>Copies: </label></p>
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
                   </p>
            </div>
            
            <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
            </div>
         </div>
      </div>
      <!-- card -->
      <div class = "col s12 m3">
-        <div class = "card blue-grey lighten-4">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/location.gif" height="293px">                
            </div>
            
-           <div class = "card-content activator">                  
+           <!-- <div class = "card-content activator">                  
               <p>Click the image to reveal more information.</p>
-           </div>
+           </div> -->
            
            <div class = "card-reveal">
               <span class = "card-title grey-text text-darken-4">About Book
@@ -130,28 +327,25 @@
                     both know you had nothing meaningful to do with your time anyways :-).
                     <p><label>Author: </label></p>
                     <p><label>Copies: </label></p>
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
                   </p>
            </div>
            
            <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
            </div>
         </div>
      </div>
       <!-- card -->
      <div class = "col s12 m3">
-        <div class = "card blue-grey lighten-4">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/giphy2.gif" height="293px">                
            </div>
            
-           <div class = "card-content activator">                  
+           <!-- <div class = "card-content activator">                  
               <p>Click the image to reveal more information.</p>
-           </div>
+           </div> -->
            
            <div class = "card-reveal">
               <span class = "card-title grey-text text-darken-4">About Book
@@ -162,15 +356,12 @@
                     both know you had nothing meaningful to do with your time anyways :-).
                     <p><label>Author: </label></p>
                     <p><label>Copies: </label></p>
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
                   </p>
            </div>
            
            <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
            </div>
         </div>
      </div>
@@ -182,14 +373,14 @@
  <div class = "row">
     <!-- card -->
     <div class = "col s12 m3">
-       <div class = "card blue-grey lighten-4">
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
           <div class="card-image waves-effect waves-block waves-light">
-             <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/uhuru.jpg" height="293px">                
           </div>
           
-          <div class = "card-content activator">                  
+          <!-- <div class = "card-content activator">                  
              <p>Click the image to reveal more information.</p>
-          </div>
+          </div> -->
           
           <div class = "card-reveal">
              <span class = "card-title grey-text text-darken-4">About Book
@@ -200,28 +391,25 @@
                     both know you had nothing meaningful to do with your time anyways :-).
                     <p><label>Author: </label></p>
                     <p><label>Copies: </label></p>
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
                   </p>
           </div>
           
           <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
-           </div>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
+             </div>
        </div>
     </div>
      <!-- card -->
     <div class = "col s12 m3">
-        <div class = "card blue-grey lighten-4">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/bunny.gif" height="293px">                
            </div>
            
-           <div class = "card-content activator">                  
+           <!-- <div class = "card-content activator">                  
               <p>Click the image to reveal more information.</p>
-           </div>
+           </div> -->
            
            <div class = "card-reveal">
               <span class = "card-title grey-text text-darken-4">About Book
@@ -232,28 +420,25 @@
                 both know you had nothing meaningful to do with your time anyways :-).
                 <p><label>Author: </label></p>
                 <p><label>Copies: </label></p>
-                <div class = "card-action">
-                    <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                 </div>
               </p>
            </div>
            
            <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
            </div>
         </div>
      </div>
       <!-- card -->
      <div class = "col s12 m3">
-        <div class = "card blue-grey lighten-4">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/run.gif" height="293px">                
            </div>
            
-           <div class = "card-content activator">                  
+           <!-- <div class = "card-content activator">                  
               <p>Click the image to reveal more information.</p>
-           </div>
+           </div> -->
            
            <div class = "card-reveal">
               <span class = "card-title grey-text text-darken-4">About Book
@@ -264,28 +449,25 @@
                     both know you had nothing meaningful to do with your time anyways :-).
                     <p><label>Author: </label></p>
                     <p><label>Copies: </label></p>
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
                   </p>
            </div>
            
            <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                   <i class="material-icons left">add_shopping_cart</i></button>
            </div>
         </div>
      </div>
       <!-- card -->
      <div class = "col s12 m3">
-        <div class = "card blue-grey lighten-4">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/runningfat.gif" height="293px">                
            </div>
            
-           <div class = "card-content activator">                  
+           <!-- <div class = "card-content activator">                  
               <p>Click the image to reveal more information.</p>
-           </div>
+           </div> -->
            
            <div class = "card-reveal">
               <span class = "card-title grey-text text-darken-4">About Book
@@ -296,15 +478,12 @@
                     both know you had nothing meaningful to do with your time anyways :-).
                     <p><label>Author: </label></p>
                     <p><label>Copies: </label></p>
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
                   </p>
            </div>
            
            <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
            </div>
         </div>
      </div>
@@ -315,14 +494,14 @@
   <div class = "row">
     <!-- card -->
     <div class = "col s12 m3">
-       <div class = "card blue-grey lighten-4">
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
           <div class="card-image waves-effect waves-block waves-light">
-             <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/catsmall.gif" height="293px">                
           </div>
           
-          <div class = "card-content activator">                  
+          <!-- <div class = "card-content activator">                  
              <p>Click the image to reveal more information.</p>
-          </div>
+          </div> -->
           
           <div class = "card-reveal">
              <span class = "card-title grey-text text-darken-4">About Book
@@ -332,29 +511,26 @@
                     may or may not feel as though I have wasted your precious time, but really we
                     both know you had nothing meaningful to do with your time anyways :-).
                     <p><label>Author: </label></p>
-                    <p><label>Copies: </label></p>
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
+                    <p><label>Copies: </label></p>>
                   </p>
           </div>
           
           <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
            </div>
        </div>
     </div>
      <!-- card -->
     <div class = "col s12 m3">
-        <div class = "card blue-grey lighten-4">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/dogpee.gif" height="293px">                
            </div>
            
-           <div class = "card-content activator">                  
+           <!-- <div class = "card-content activator">                  
               <p>Click the image to reveal more information.</p>
-           </div>
+           </div> -->
            
            <div class = "card-reveal">
               <span class = "card-title grey-text text-darken-4">About Book
@@ -365,28 +541,25 @@
                 both know you had nothing meaningful to do with your time anyways :-).
                 <p><label>Author: </label></p>
                 <p><label>Copies: </label></p>
-                <div class = "card-action">
-                    <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                 </div>
               </p>
            </div>
            
            <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
            </div>
         </div>
      </div>
       <!-- card -->
      <div class = "col s12 m3">
-        <div class = "card blue-grey lighten-4">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/cathigh.gif" height="293px">                
            </div>
            
-           <div class = "card-content activator">                  
+           <!-- <div class = "card-content activator">                  
               <p>Click the image to reveal more information.</p>
-           </div>
+           </div> -->
            
            <div class = "card-reveal">
               <span class = "card-title grey-text text-darken-4">About Book
@@ -397,28 +570,25 @@
                     both know you had nothing meaningful to do with your time anyways :-).
                     <p><label>Author: </label></p>
                     <p><label>Copies: </label></p>
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
                   </p>
            </div>
            
            <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
            </div>
         </div>
      </div>
       <!-- card -->
      <div class = "col s12 m3">
-        <div class = "card blue-grey lighten-4">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src = "assets/images/profile_image.png" height="200px">                
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/airplane.gif" height="293px">                
            </div>
            
-           <div class = "card-content activator">                  
+           <!-- <div class = "card-content activator">                  
               <p>Click the image to reveal more information.</p>
-           </div>
+           </div> -->
            
            <div class = "card-reveal">
               <span class = "card-title grey-text text-darken-4">About Book
@@ -427,67 +597,1175 @@
                  <p>What you behold is some random stuff about absolutely nothing. Perhaps you
                     may or may not feel as though I have wasted your precious time, but really we
                     both know you had nothing meaningful to do with your time anyways :-).
-                    <div class = "card-action">
-                        <button class = "btn waves-effect waves-light blue-grey">borrow</button>
-                     </div>
                   </p>
            </div>
            
            <div class = "card-action">
-              <button class = "btn waves-effect waves-light green">borrow
-                 <i class = "material-icons left">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
            </div>
         </div>
      </div>
  </div>
  <!-- / ROW -->
 
- 
- 
-<!-- <div class = "row">
+   <!-- row -->
+   <div class = "row">
+    <!-- card -->
     <div class = "col s12 m3">
-       <div class = "card-panel teal">
-          <span class = "white-text">Simple Card</span>
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/dog03.gif" height="293px">                
+          </div>
+          
+          <!-- <div class = "card-content activator">                  
+             <p>Click the image to reveal more information.</p>
+          </div> -->
+          
+          <div class = "card-reveal">
+             <span class = "card-title grey-text text-darken-4">About Book
+                <i class = "material-icons right">close</i></span>
+                <hr>
+                <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+          </div>
+          
           <div class = "card-action">
-              <button class = "btn waves-effect waves-light blue-grey">
-                 <i class = "material-icons">add</i></button>
+                <button class = "btn waves-effect waves-light cyan" onclick="Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
            </div>
        </div>
     </div>
-    
+     <!-- card -->
     <div class = "col s12 m3">
-       <div class = "card small teal">
-          <span class = "white-text">Small Card</span>
-       </div>
-    </div>
-    
-    <div class = "col s12 m3">
-       <div class = "card medium teal">
-          <span class = "white-text">Medium Card</span>
-       </div>
-    </div>
-    
-    <div class = "col s12 m3">
-       <div class = "card large teal">
-          <span class = "white-text">Large Card</span>
-       </div>
-    </div>
- </div>     	   -->
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/source.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                <hr>
+              <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                may or may not feel as though I have wasted your precious time, but really we
+                both know you had nothing meaningful to do with your time anyways :-).
+                <p><label>Author: </label></p>
+                <p><label>Copies: </label></p>
+              </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
      </div>
+      <!-- card -->
+     <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/bird.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                 <hr>
+                 <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+      <!-- card -->
+     <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/giphy3.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                 <hr>
+                 <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+ </div>
+ <!-- / ROW -->
+   <!-- row -->
+   <div class = "row">
+    <!-- card -->
+    <div class = "col s12 m3">
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/inter.gif" height="293px">                
+          </div>
+          
+          <!-- <div class = "card-content activator">                  
+             <p>Click the image to reveal more information.</p>
+          </div> -->
+          
+          <div class = "card-reveal">
+             <span class = "card-title grey-text text-darken-4">About Book
+                <i class = "material-icons right">close</i></span>
+                <hr>
+                <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+          </div>
+          
+          <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick="Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+       </div>
+    </div>
+     <!-- card -->
+    <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/food.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                <hr>
+              <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                may or may not feel as though I have wasted your precious time, but really we
+                both know you had nothing meaningful to do with your time anyways :-).
+                <p><label>Author: </label></p>
+                <p><label>Copies: </label></p>
+              </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+      <!-- card -->
+     <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/birdmove.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                 <hr>
+                 <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+      <!-- card -->
+     <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/slice.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                 <hr>
+                 <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+ </div>
+ <!-- / ROW -->
+
+   <!-- row -->
+   <div class = "row">
+    <!-- card -->
+    <div class = "col s12 m3">
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/parrot.gif" height="293px">                
+          </div>
+          
+          <!-- <div class = "card-content activator">                  
+             <p>Click the image to reveal more information.</p>
+          </div> -->
+          
+          <div class = "card-reveal">
+             <span class = "card-title grey-text text-darken-4">About Book
+                <i class = "material-icons right">close</i></span>
+                <hr>
+                <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+          </div>
+          
+          <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick="Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+       </div>
+    </div>
+     <!-- card -->
+    <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/road-block.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                <hr>
+              <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                may or may not feel as though I have wasted your precious time, but really we
+                both know you had nothing meaningful to do with your time anyways :-).
+                <p><label>Author: </label></p>
+                <p><label>Copies: </label></p>
+              </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+      <!-- card -->
+     <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/dribbble.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                 <hr>
+                 <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+      <!-- card -->
+     <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/flat-is-dead.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                 <hr>
+                 <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+ </div>
+ <!-- / ROW -->
+   <!-- row -->
+   <div class = "row">
+    <!-- card -->
+    <div class = "col s12 m3">
+       <div class = "card blue-grey lighten-4 sticky-action hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+             <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/inter.gif" height="293px">                
+          </div>
+          
+          <!-- <div class = "card-content activator">                  
+             <p>Click the image to reveal more information.</p>
+          </div> -->
+          
+          <div class = "card-reveal">
+             <span class = "card-title grey-text text-darken-4">About Book
+                <i class = "material-icons right">close</i></span>
+                <hr>
+                <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+          </div>
+          
+          <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick="Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+       </div>
+    </div>
+     <!-- card -->
+    <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/catbubble.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                <hr>
+              <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                may or may not feel as though I have wasted your precious time, but really we
+                both know you had nothing meaningful to do with your time anyways :-).
+                <p><label>Author: </label></p>
+                <p><label>Copies: </label></p>
+              </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+      <!-- card -->
+     <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/animaldribble.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                 <hr>
+                 <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                  <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+      <!-- card -->
+     <div class = "col s12 m3">
+        <div class = "card blue-grey lighten-4 sticky-action hoverable">
+           <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator tooltipped" data-position="top" data-delay="0" data-tooltip="Click to view details." src = "assets/images/uiguy.gif" height="293px">                
+           </div>
+           
+           <!-- <div class = "card-content activator">                  
+              <p>Click the image to reveal more information.</p>
+           </div> -->
+           
+           <div class = "card-reveal">
+              <span class = "card-title grey-text text-darken-4">About Book
+                 <i class = "material-icons right">close</i></span>
+                 <hr>
+                 <p>What you behold is some random stuff about absolutely nothing. Perhaps you
+                    may or may not feel as though I have wasted your precious time, but really we
+                    both know you had nothing meaningful to do with your time anyways :-).
+                    <p><label>Author: </label></p>
+                    <p><label>Copies: </label></p>
+                  </p>
+           </div>
+           
+           <div class = "card-action">
+                <button class = "btn waves-effect waves-light cyan" onclick=" Materialize.toast('Book Borrowed!', 1000, 'rounded')">borrow
+                    <i class="material-icons left">add_shopping_cart</i></button>
+           </div>
+        </div>
+     </div>
+ </div>
+ <!-- / ROW -->
+
+ <!-- PRELOADER -->
+ <div class="row center">
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+        <div class="spinner-layer spinner-red">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+
+          <div class="spinner-layer spinner-yellow">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>      
+ </div>
+ <!-- / PRELOADER -->
+  <!-- footer -->
+  <footer class="page-footer" style="background: #212429">
+      
+            <div class="container center">
+              <div class="row">
+                  <ul class="pagination">
+                      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                      <li class="active cyan"><a href="#!">1</a></li>
+                      <li class="waves-effect"><a href="#!">2</a></li>
+                      <li class="waves-effect"><a href="#!">3</a></li>
+                      <li class="waves-effect"><a href="#!">4</a></li>
+                      <li class="waves-effect"><a href="#!">5</a></li>
+                      <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                    </ul>
+                <!-- <div class="col l6 s12">
+                  <h5 class="white-text">Footer Content</h5>
+                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Links</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              &copy 2018 Copyright Hello Books 
+              <a class="grey-text text-lighten-4 right" href="#!">Martins Onuoha</a>
+              </div>
+            </div>
+          </footer>
+        <!-- / footer -->
+
+     </div>  <!-- Library -->
 
 <!-- TABS -->
-     <div id="test2" class="col s12">Borrowed Books</div>
-     <div id="test3" class="col s12">History</div>
-     <div id="test4" class="col s12">User Profile</div>
-     <div id="test5" class="col s12">Edit Books</div>
-     <div id="test6" class="col s12">Delete Books</div>
+     <div id="test2" class="col s12">
+         <div class="container">
+            <div class="col s12 m7">
+              <div class="cover">
+                <h5 class="header hoverable">Add New Book</h5>
+              </div>
+                <div class="card horizontal hoverable">
+                  <div class="card-stacked">
+                    <div class="card-content">
+                        <form class="col s12">
+                            <div class="row">
+                              <div class="input-field col s2">
+                                <!-- <i class="material-icons prefix"></i> -->
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">ISBN</label>
+                              </div>
+                              <div class="input-field col s6">
+                                <i class="material-icons prefix">book</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Book Title</label>
+                              </div>
+                              <div class="input-field col s4">
+                                <i class="material-icons prefix">face</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Author</label>
+                              </div>
+                            </div>
+                <!-- Row 2 -->
+                <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">mode_edit</i>
+                      <textarea id="textarea1" class="materialize-textarea" data-length="200"></textarea>
+                      <label for="textarea1">Description</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s4">
+                      <i class="material-icons prefix">date_range</i>
+                      <input type="text" class="datepicker">
+                      <label for="icon_prefix">Date</label>
+                    </div>
+                    <div class="input-field col s2">
+                      <i class="material-icons prefix">store</i>
+                      <input type="number" class="number" min="0" max="20">
+                      <label for="icon_prefix">Quantity</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <select>
+                          <option value="" disabled selected>Categories</option>
+                          <option value="1">Programming</option>
+                          <option value="2">Philosophy</option>
+                          <option value="3">Science</option>
+                          <option value="4">Fiction</option>
+                          <option value="5">Renaissance</option>
+                        </select>
+                        <label>Select a category.</label>
+                      </div>
+                  </div>
+
+                  <!-- Row Form -->
+                  <div class="row">
+                      <div class="file-field input-field">
+                          <div class="btn blue lighten-2">
+                            <i class="material-icons left">attach_file</i>
+                            <span>Cover Image</span>
+                            <input type="file">
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                          </div>
+                        </div>
+                  </div>
+
+                          </form>
+                    </div>
+                    <div class="card-action center">
+                        <button class = "btn waves-effect waves-light teal pulse" onclick=" Materialize.toast('New Book Added!', 1000, 'rounded')">Done!
+                            <i class = "material-icons left">done_all</i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+         </div>
+     </div>
+     <div id="test3" class="col s12">
+        <main class="book-list white-area">
+            <div class="row">
+                <div class="container">
+                    <div class="center">
+                        <div class="cover">
+                            <h5 class="header hoverable">Borrowing History</h5>
+                          </div>
+                    </div>
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Cover</th>
+                                <th>Title</th>
+                                <th>Author(s)</th>
+                                <th>Date Borrowed</th>
+                                <th>Due Date</th>
+                                <th>Days Left</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/runswim.gif" alt="run, swin, ride.">
+                                </td>
+                                <td><a href="book-detail.html">Eloquent Javascript</a></td>
+                                <td>Marijn Haverbeke</td>
+                                <td>28/07/2017</td>
+                                <td>10/08/2017</td>
+                                <td>10</td>
+                                <td>Pending</td>
+                                <td>
+                                    <a href="#" class="btn waves-effect action-btn" style="margin-bottom: 5px;">Read</a>
+                                    <a href="#bookreturned" class="btn waves-effect  action-btn" onclick=" Materialize.toast('You returned a book!', 1000, 'rounded')">Return</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/cathigh.gif" alt="cat High">
+                                </td>
+                                <td><a href="#">Smashing Node.js</a></td>
+                                <td>Guillermo Rauch</td>
+                                <td>28/07/2017</td>
+                                <td>10/08/2017</td>
+                                <td>10</td>
+                                <td>Pending</td>
+                                <td>
+                                    <a href="#" class="btn waves-effect action-btn" style="margin-bottom: 5px;">Read</a>
+                                    <a href="#bookreturned" class="btn waves-effect  action-btn" onclick=" Materialize.toast('You returned a book!', 1000, 'rounded')">Return</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/catbubble.gif" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Kill the Lazy Cat</a></td>
+                                <td>Emanuele DelBono</td>
+                                <td>28/07/2017</td>
+                                <td>10/08/2017</td>
+                                <td>0</td>
+                                <td>Returned</td>
+                                <td>
+                                    <a href="#" class="btn waves-effect action-btn disabled" style="margin-bottom: 5px;">Read</a>
+                                    <a href="#bookreturned" class="btn waves-effect  action-btn disabled" onclick=" Materialize.toast('You returned a book!', 1000, 'rounded')">Return</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/slice.gif" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Slice Pythons</a></td>
+                                <td>Emanuele DelBono</td>
+                                <td>28/07/2017</td>
+                                <td>10/08/2017</td>
+                                <td>0</td>
+                                <td>Returned</td>
+                                <td>
+                                    <a href="#" class="btn waves-effect action-btn disabled" style="margin-bottom: 5px;">Read</a>
+                                    <a href="#bookreturned" class="btn waves-effect  action-btn disabled">Return</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/uhuru.jpg" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Uhuru</a></td>
+                                <td>Rober Ruak</td>
+                                <td>28/07/2017</td>
+                                <td>10/08/2017</td>
+                                <td>0</td>
+                                <td>Returned</td>
+                                <td>
+                                    <a href="#" class="btn waves-effect action-btn" style="margin-bottom: 5px;">Read</a>
+                                    <a href="#bookreturned" class="btn waves-effect  action-btn" onclick=" Materialize.toast('You returned a book!', 1000, 'rounded')">Return</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/giphy.gif" alt="deadline">
+                                </td>
+                                <td><a href="#">How to Kill Deadlines</a></td>
+                                <td>Zed Shaw</td>
+                                <td>02/06/2017</td>
+                                <td>10/06/2017</td>
+                                <td>0</td>
+                                <td>Returned</td>
+                                <td>
+                                    <a href="#" class="btn waves-effect action-btn disabled" style="margin-bottom: 5px;">Read</a>
+                                    <a href="#bookreturned" class="btn waves-effect  action-btn disabled">Return</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/value.jpg" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Something Of Value</a></td>
+                                <td>Rober Ruak</td>
+                                <td>28/07/2017</td>
+                                <td>10/08/2017</td>
+                                <td>0</td>
+                                <td>Returned</td>
+                                <td>
+                                    <a href="#" class="btn waves-effect action-btn" style="margin-bottom: 5px;">Read</a>
+                                    <a href="#bookreturned" class="btn waves-effect  action-btn" onclick=" Materialize.toast('You returned a book!', 1000, 'rounded')">Return</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/things.jpg" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Things Fall Apart</a></td>
+                                <td>Chinua Achebe</td>
+                                <td>28/07/2017</td>
+                                <td>10/08/2017</td>
+                                <td>0</td>
+                                <td>Returned</td>
+                                <td>
+                                    <a href="#" class="btn waves-effect action-btn" style="margin-bottom: 5px;">Read</a>
+                                    <a href="#bookreturned" class="btn waves-effect  action-btn" onclick=" Materialize.toast('You returned a book!', 1000, 'rounded')">Return</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+  <!-- footer -->
+  <footer class="page-footer" style="background: #212429">
+      
+            <div class="container center" style="height: 5px;">
+              <div class="row">
+                  <ul class="pagination">
+                      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                      <li class="active cyan"><a href="#!">1</a></li>
+                      <li class="waves-effect"><a href="#!">2</a></li>
+                      <li class="waves-effect"><a href="#!">3</a></li>
+                      <li class="waves-effect"><a href="#!">4</a></li>
+                      <li class="waves-effect"><a href="#!">5</a></li>
+                      <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                    </ul>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <!-- <div class="container">
+              &copy 2018 Copyright Hello Books 
+              <a class="grey-text text-lighten-4 right" href="#!">Martins Onuoha</a>
+              </div> -->
+            </div>
+          </footer>
+        <!-- / footer -->
+      </div>
+
+
+     <div id="test4" class="col s6">
+        <div class="center">
+            <div class="cover">
+                <h5 class="header hoverable">User Profile</h5>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m5">
+              <div class="card hoverable">
+                <div class="card-image">
+                  <img src="assets/img/martins.png" height="500px" width="200px" class="materialboxed">
+                  <span class="card-title">Martins Onuoha</span>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">photo_camera</i></a>
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                </div>
+              </div>
+            </div>
+          <div class="col s12 m3">
+            <div class="card center-align hoverable">
+              <div class="card-content purple white-text">
+                <i class="material-icons">credit_card</i>
+                <p class="card-stats-title">Book Coins</p>
+                <h4 class="card-stats-number">$900,000</h4>
+                <p class="card-stats-compare">70%
+                  <i class="material-icons left">trending_up</i>
+                  <span class="purple-text text-lighten-5">last month</span>
+                </p>
+              </div>
+              <div class="card-action purple darken-2">
+                <div id="sales-compositebar">
+                  <canvas width="214" height="25" style="display: inline-block; width: 214px; height: 25px; vertical-align: top;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col s12 m4">
+          <div class="card amber darken-2 hoverable">
+            <div class="card-content white-text center-align">
+              <i class="material-icons">group_add</i>
+              <p>Followers</p>
+              <h4 class="card-stat-number">+5439</h4>
+              <p class="card-stats-compare">70%
+                  <i class="material-icons left">trending_up</i>
+                  <span class="purple-text text-lighten-5">last month</span>
+                </p>
+            </div>
+            <div class="card-action amber darken-4">
+                <div id="sales-compositebar">
+                  <canvas width="214" height="25" style="display: inline-block; width: 214px; height: 25px; vertical-align: top;"></canvas>
+                </div>
+            </div>
+          </div>
+          </div>
+          <div class="col s12 m7">
+            <div class="card hoverable">
+            <ul id="task-card" class="collection with-header">
+              <li class="collection-header cyan">
+                
+                <h4 class="task-card-title" style="color: #fff;">My Task<i class="material-icons left" style="font-size: 30px;">today</i></h4>
+                <p class="task-card-date" style="color: #fff;">September 24, 2017</p>
+              </li>
+              <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                <input type="checkbox" id="task1">
+                <label for="task1" style="text-decoration: none;">
+                  Create UI Templates.
+                  <a href="#!" class="secondary-content">
+                    <span class="ultra-small right">Today</span>
+                  </a>
+                </label>
+                <span class="new badge teal">Web App</span>
+              </li>
+              <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <input type="checkbox" id="task2">
+                  <label for="task2" style="text-decoration: none;">
+                    Check Web API standards.
+                    <a href="#!" class="secondary-content">
+                      <span class="ultra-small right">Monday</span>
+                    </a>
+                  </label>
+                  <span class="new badge purple">Web API</span>
+              </li>
+              <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <input type="checkbox" id="task3">
+                  <label for="task3" style="text-decoration: line-through;">
+                    Refactor UI using Materialize.
+                    <a href="#!" class="secondary-content">
+                      <span class="ultra-small right">Yesterday</span>
+                    </a>
+                  </label>
+                  <span class="new badge blue darken-1">UI/UX</span>
+              </li>
+              <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <input type="checkbox" id="task4">
+                  <label for="task4" style="text-decoration: none;">
+                    Build Server-side logic.
+                    <a href="#!" class="secondary-content">
+                      <span class="ultra-small right">Tuesday</span>
+                    </a>
+                  </label>
+                  <span class="new badge green darken-1">Server/NodeJS</span>
+              </li>
+              <li class="collection-item dismissable" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <input type="checkbox" id="task5">
+                  <label for="task5" style="text-decoration: none;">
+                    Implement ReactJs.
+                    <a href="#!" class="secondary-content">
+                      <span class="ultra-small right">Friday</span>
+                    </a>
+                  </label>
+                  <span class="new badge green darken-1">Client/ReactJS</span>
+              </li>
+            </ul>
+          </div>
+          </div>
+        </div>
+  
+    <div class="row">
+      <div class="col s12 m5">
+      <div class="card hoverable">
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Martins Onuoha</h4></li>
+        <li class="collection-item"><div class="grey-text">Skills<i class="material-icons left">build</i><a href="#!" class="secondary-content">Web Development| Python/IOT| AI| Linux/OSCP</a></div></li>
+        <li class="collection-item"><div class="grey-text">Birthday<i class="material-icons left">cake</i><a href="#!" class="secondary-content">27/06/'98</a></div></li>
+        <li class="collection-item"><div class="grey-text">Location<i class="material-icons left">location_on</i><a href="#!" class="secondary-content">Lagos, Nigeria.</a></div></li>
+        <li class="collection-item"><div class="grey-text">Project Name<i class="material-icons left">work</i><a href="#!" class="secondary-content">Hello Books.</a></div></li>
+      </ul>
+    </div>
+    </div>
+    <div class="col s12 m7 center">
+        <a class="btn-floating btn-large waves-effect waves-light teal tooltipped" data-position="bottom" data-delay="0" data-tooltip="Edit Profile"><i class="material-icons">mode_edit</i></a>
+        <a class="btn-floating btn-large waves-effect waves-light red tooltipped" data-position="bottom" data-delay="0" data-tooltip="Logout"><i class="material-icons">exit_to_app</i></a>
+    </div>
+  </div>
+</div>
+
+<!-- / PROFILE -->
+
+     <div id="test5" class="col s12">
+        <main class="book-list white-area">
+            <div class="row">
+                <div class="container">
+                    <div class="center">
+                        <div class="cover">
+                            <h5 class="header hoverable">Edit Books</h5>
+                          </div>
+                    </div>
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Cover</th>
+                                <th>Title</th>
+                                <th>Author(s)</th>
+                                <th>Date Posted</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/runswim.gif" alt="run, swin, ride.">
+                                </td>
+                                <td><a href="book-detail.html">Eloquent Javascript</a></td>
+                                <td>Marijn Haverbeke</td>
+                                <td>28/07/2017</td>
+                                <td>Available</td>
+                                <td>
+                                    <a class="btn-floating btn-small waves-effect waves-light red" onclick=" Materialize.toast('You Deleted a book!', 1000, 'rounded')" style="margin-bottom: 5px;"><i class="material-icons">delete</i></a>
+                                    <a class="btn-floating btn-small waves-effect waves-light teal"><i class="material-icons">create</i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/cathigh.gif" alt="cat High">
+                                </td>
+                                <td><a href="#">Smashing Node.js</a></td>
+                                <td>Guillermo Rauch</td>
+                                <td>28/07/2017</td>
+                                <td>Unavailable</td>
+                                <td>
+                                    <a class="btn-floating btn-small waves-effect waves-light red disabled" onclick=" Materialize.toast('You Deleted a book!', 1000, 'rounded')" style="margin-bottom: 5px;"><i class="material-icons">delete</i></a>
+                                    <a class="btn-floating btn-small waves-effect waves-light teal disabled"><i class="material-icons">create</i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/catbubble.gif" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Kill the Lazy Cat</a></td>
+                                <td>Emanuele DelBono</td>
+                                <td>28/07/2017</td>
+                                <td>Available</td>
+                                <td>
+                                    <a class="btn-floating btn-small waves-effect waves-light red" onclick=" Materialize.toast('You Deleted a book!', 1000, 'rounded')" style="margin-bottom: 5px;"><i class="material-icons">delete</i></a>
+                                    <a class="btn-floating btn-small waves-effect waves-light teal"><i class="material-icons">create</i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/slice.gif" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Slice Pythons</a></td>
+                                <td>Emanuele DelBono</td>
+                                <td>28/07/2017</td>
+                                <td>Available</td>
+                                <td>
+                                    <a class="btn-floating btn-small waves-effect waves-light red" onclick=" Materialize.toast('You Deleted a book!', 1000, 'rounded')" style="margin-bottom: 5px;"><i class="material-icons">delete</i></a>
+                                    <a class="btn-floating btn-small waves-effect waves-light teal"><i class="material-icons">create</i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/uhuru.jpg" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Uhuru</a></td>
+                                <td>Rober Ruak</td>
+                                <td>28/07/2017</td>
+                                <td>Unavailable</td>
+                                <td>
+                                    <a class="btn-floating btn-small waves-effect waves-light red disabled" style="margin-bottom: 5px;"><i class="material-icons">delete</i></a>
+                                    <a class="btn-floating btn-small waves-effect waves-light teal disabled"><i class="material-icons">create</i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/giphy.gif" alt="deadline">
+                                </td>
+                                <td><a href="#">How to Kill Deadlines</a></td>
+                                <td>Zed Shaw</td>
+                                <td>02/06/2017</td>
+                                <td>Available</td>
+                                <td>
+                                    <a class="btn-floating btn-small waves-effect waves-light red" onclick=" Materialize.toast('You Deleted a book!', 1000, 'rounded')" style="margin-bottom: 5px;"><i class="material-icons">delete</i></a>
+                                    <a class="btn-floating btn-small waves-effect waves-light teal"><i class="material-icons">create</i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/value.jpg" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Something Of Value</a></td>
+                                <td>Rober Ruak</td>
+                                <td>28/07/2017</td>
+                                <td>Available</td>
+                                <td>
+                                    <a class="btn-floating btn-small waves-effect waves-light red" onclick=" Materialize.toast('You Deleted a book!', 1000, 'rounded')" style="margin-bottom: 5px;"><i class="material-icons">delete</i></a>
+                                    <a class="btn-floating btn-small waves-effect waves-light teal"><i class="material-icons">create</i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="thumbnail" src="assets/images/things.jpg" alt="lazy cat">
+                                </td>
+                                <td><a href="#">Things Fall Apart</a></td>
+                                <td>Chinua Achebe</td>
+                                <td>28/07/2017</td>
+                                <td>Unavailable</td>
+                                <td>
+                                    <a class="btn-floating btn-small waves-effect waves-light red disabled" onclick=" Materialize.toast('You Deleted a book!', 1000, 'rounded')" style="margin-bottom: 5px;"><i class="material-icons">delete</i></a>
+                                    <a class="btn-floating btn-small waves-effect waves-light teal disabled"><i class="material-icons">create</i></a>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer" style="background: #212429">
+            
+                  <div class="container center" style="height: 5px;">
+                    <div class="row">
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li class="active cyan"><a href="#!">1</a></li>
+                            <li class="waves-effect"><a href="#!">2</a></li>
+                            <li class="waves-effect"><a href="#!">3</a></li>
+                            <li class="waves-effect"><a href="#!">4</a></li>
+                            <li class="waves-effect"><a href="#!">5</a></li>
+                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                          </ul>
+                    </div>
+                  </div>
+                  <div class="footer-copyright">
+                    <!-- <div class="container">
+                    &copy 2018 Copyright Hello Books 
+                    <a class="grey-text text-lighten-4 right" href="#!">Martins Onuoha</a>
+                    </div> -->
+                  </div>
+                </footer>
+              <!-- / footer -->
+     </div>
+<!-- / Edit Books -->
+     <!-- <div id="test6" class="col s12">Delete Books</div> -->
 
   
   <!-- /navbar -->
 
+
+
+
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+  });
+
+  //Text Area
+  $(document).ready(function() {
+    $('input#input_text, textarea#textarea1').characterCounter();
+  });
+
+  //Dropdown
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+
+  //Material Box 
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+    </script>
 
   </body>
 </html>
