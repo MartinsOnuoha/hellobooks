@@ -4,6 +4,13 @@ import router from '../routes/routes';
 import should from 'should';
 import supertest from 'supertest';
 
+// const app =  require('../app.js');
+// const chai = require('chai').expect;
+// const router = require('../routes/routes');
+// const should = require('should');
+// const supertest = require('supertest');
+
+
 /*
 *@param null
 *@return String
@@ -63,14 +70,14 @@ describe('Routes', () => {
                 done();
             });
     });
-    it("it should signin a registered user", (done) => {
-        appTest.post("/api/users/signin").
-            set("Action", "Application/json").
-            send(registeredUser).
-            end((error, res) => {
-                expect(res.status).is.equal(200);
-                done();
-            });
-    });
+    // it("it should signin a registered user", (done) => {
+    //     appTest.post("/api/users/signin").
+    //         set("Action", "Application/json").
+    //         send(registeredUser).
+    //         end((error, res) => {
+    //             expect(res.status).is.equal(200);
+    //             done();
+    //         });
+    // });
 
 });
