@@ -4,6 +4,13 @@ import router from '../routes/routes';
 import should from 'should';
 import supertest from 'supertest';
 
+// const app =  require('../app.js');
+// const chai = require('chai').expect;
+// const router = require('../routes/routes');
+// const should = require('should');
+// const supertest = require('supertest');
+
+
 /*
 *@param null
 *@return String
@@ -12,8 +19,8 @@ import supertest from 'supertest';
 // Generate random email addresses to run several tests
 const randomEmail = () => {
     // Initialize variable email to an empty string
-    let email = '';
-    const Alpha = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  let email = '';
+  const Alpha = 'abcdefghijklmnopqrstuvwxyz0123456789';
     for (let i = 0; i < 15; i++) {
         // Randomize testAlphabets and numbers
         email += Alpha.charAt(Math.floor(Math.random() * Alpha.length));
@@ -63,14 +70,14 @@ describe('Routes', () => {
                 done();
             });
     });
-    it("it should signin a registered user", (done) => {
-        appTest.post("/api/users/signin").
-            set("Action", "Application/json").
-            send(registeredUser).
-            end((error, res) => {
-                expect(res.status).is.equal(200);
-                done();
-            });
-    });
+    // it("it should signin a registered user", (done) => {
+    //     appTest.post("/api/users/signin").
+    //         set("Action", "Application/json").
+    //         send(registeredUser).
+    //         end((error, res) => {
+    //             expect(res.status).is.equal(200);
+    //             done();
+    //         });
+    // });
 
 });

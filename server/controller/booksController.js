@@ -17,7 +17,7 @@ class Book {
     // Add New Book
     static addBook (req, res) {
         bookModel.create(req.body).then((book) => {
-            res.send(201).json({message: "new book created!"});
+            res.sendStatus(201).json({message: "new book created!"});
         }).
             catch((error) => {
             // Check if all fields are supplied.
@@ -29,9 +29,6 @@ class Book {
                 } else if (error.name === "SequelizeUniqueConstraintError") {
                     res.status(409).
                         json({"message": "Two books cannot have the same ISBN number"});
-                } else if (req.body.quantity <= 0) {
-                    res.json({message: "invalid Quantity input!"});
-
                 } else {
                     res.send({'message': 'Oops, An Error Occurred.'});
                     console.log(error);
