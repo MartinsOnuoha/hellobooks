@@ -12,8 +12,8 @@ import supertest from 'supertest';
 // Generate random email addresses to run several tests
 const randomEmail = () => {
     // Initialize variable email to an empty string
-    let email = '';
-    const Alpha = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  let email = '';
+  const Alpha = 'abcdefghijklmnopqrstuvwxyz0123456789';
     for (let i = 0; i < 15; i++) {
         // Randomize testAlphabets and numbers
         email += Alpha.charAt(Math.floor(Math.random() * Alpha.length));
