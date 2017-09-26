@@ -3,6 +3,11 @@ import express from "express";
 import morgan from "morgan";
 import router from "./routes/routes";
 
+// const bodyParser = require('body-parser');
+// const express = require('express');
+// const morgan = require('morgan');
+// const router = require('./routes/routes');
+
 require("dotenv").config();
 const port = process.env.PORT || 8000;
 const app = express();
