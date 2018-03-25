@@ -30,16 +30,19 @@ class User {
 
     }
 
+    // signup, register a new user
     static signup (req, res) {
         // Create new userModel with request from user
         userModel.create(req.body).then(() => {
-            res.
-                status(201).json({"message": "SignUp Successful"});
+            res.status(201).json({
+                "message": "SignUp Successful"
+            });
         }).
             catch((error) => {
                 if (error.name === "SequelizeUniqueConstraintError") {
                     res.status(400).json({
-                        "message": "Sorry, this email address is registered"});
+                        "message": "Sorry, this email address is registered"
+                    });
                 } else if (error === Sequelize.ValidationError) {
                     res.status(400).json(
                         {"message": "An Error Occurred, Check Signup details"});
@@ -55,6 +58,7 @@ class User {
      * @param {object} res
      */
 
+     // borrow new book from available books in library
     static borrowBook (req, res) {
         borrowedBooksModel.create(req.body).then(() => {
             res.status(201).json({"message": "New Book added to shelf"});
@@ -66,6 +70,8 @@ class User {
             });
 
     }
+
+    // Sign in registered users
     static signin (req, res) {
         userModel.findOne({ where:
             {email: req.body.email,
@@ -96,6 +102,7 @@ class User {
         }
     }
 
+    // 
     static getUserBooks (req, res) {
         const returnStatus = req.query.returned;
         const query = {};
@@ -133,7 +140,7 @@ class User {
    * @param { object } res
    * @returns { void }
    */
-    static booksReturned(req, res) {
+    static booksReturned (req, res) {
         const returnStatus = req.query.returned;
         borrowedBooksModel.findAll({
             where: {returnstatus: returnStatus}}).then((response) => {

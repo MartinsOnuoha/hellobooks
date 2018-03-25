@@ -11,7 +11,7 @@ const router = express.Router();
 // Home route
 router.get("/", (req, res) => {
     res.status(200).send("Welcome to Hello Books");
-    console.log("Welcome!");
+
 });
 
 // Create a new User
@@ -34,7 +34,8 @@ router.put('/books/:id', Auth.verifyAdmin, BookController.modifyBook);
 
 // Allow User borrow books
 router.route("/users/:userId/books").
-    post(Auth.verifyUser, helper.checkBook, helper.verify, UserController.borrowBook).
+    post(Auth.verifyUser,
+        helper.checkBook, helper.verify, UserController.borrowBook).
     get(Auth.verifyUser, UserController.getUserBooks).
     put(Auth.verifyUser, BookController.returnBook);
 
