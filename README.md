@@ -41,29 +41,29 @@ $ npm start
 
 ## API ROUTES
 ``` 
- <b>POST</b> : /api/users/signup
+ POST : /api/users/signup
  
 ```
 ``` 
-<b>POST</b> : /api/users/signin
+POST : /api/users/signin
 ```
 ``` 
-<b>POST</b> : /api/books
+POST : /api/books
 ```
 ``` 
-<b>PUT</b> : /api/books/<bookId>
+PUT : /api/books/<bookId>
 ```
 ``` 
-<b>GET</b> : /api/books
+GET : /api/books
 ```
 ``` 
-<b>GET</b> : /api/users/<userId>/books?returned=false
+GET : /api/users/<userId>/books?returned=false
 ```
 ``` 
-<b>POST</b> : /api/users/<userId>/books
+POST : /api/users/<userId>/books
 ```
 ``` 
-<b>PUT</b> : /api/users/<userId>/books
+PUT : /api/users/<userId>/books
 ```
 
 
