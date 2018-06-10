@@ -40,14 +40,14 @@ $ npm start
 >> ```Modify Books```
 
 ## API ROUTES
-> <b>POST</b> : ```/api/users/signup```
-> <b>POST</b> : ```/api/users/signin```
-> <b>POST</b> : ```/api/books```
-> <b>PUT</b> : ```/api/books/<bookId>```
-> <b>GET</b> : ```/api/books```
-> <b>GET</b> : ```/api/users/<userId>/books?returned=false```
-> <b>POST</b> : ```/api/users/<userId>/books```
-> <b>PUT</b> : ```/api/users/<userId>/books```
+``` <b>POST</b> : /api/users/signup```
+``` <b>POST</b> : /api/users/signin```
+``` <b>POST</b> : /api/books```
+``` <b>PUT</b> : /api/books/<bookId>```
+``` <b>GET</b> : /api/books```
+``` <b>GET</b> : /api/users/<userId>/books?returned=false```
+``` <b>POST</b> : /api/users/<userId>/books```
+``` <b>PUT</b> : /api/users/<userId>/books```
 
 
 
