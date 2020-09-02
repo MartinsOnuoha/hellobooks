@@ -30,7 +30,7 @@
     "ejs": "2.5.6",
     "express": "^4.15.3",
     "jsonwebtoken": "^7.4.2",
-    "morgan": "^1.8.2",
+    "morgan": "^1.9.1",
     "pg": "^7.0.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^5.15.1",
